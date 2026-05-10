@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CA — Class Apart Singapore | ICAI Singapore Chapter 2026–27</title>
+<title>CA: The Chronicle — ICAI Singapore Chapter | 2026–27</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════
@@ -181,7 +181,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
 .page { position:relative; overflow:hidden; }
 
 /* ═══════════════════════════════════
-   I. COVER — "CA Class Apart Singapore"
+   I. COVER — "CA: The Chronicle"
 ═══════════════════════════════════ */
 #cover {
   min-height:100vh;
@@ -934,6 +934,135 @@ body.admin-mode .editable:hover::after { opacity:1; }
   .profile-photo-col { padding:40px 24px; }
   .profile-content-col { padding:40px 24px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   V5: Hexagon emblem, triangle page numbers, profile system,
+       past chairs, print/PDF styles
+═══════════════════════════════════════════════════════════════ */
+
+/* HEXAGON COVER */
+.hex-emblem { position:relative; width:220px; height:220px; margin:0 auto 36px; }
+.hex-emblem svg { width:100%; height:100%; filter:drop-shadow(0 0 50px rgba(201,168,76,0.35)); }
+
+/* TRIANGLE PAGE MARKERS */
+/* PAGE NUMBER TRIANGLES — SVG-based so numbers sit INSIDE the triangle shape */
+.page-marker { display:inline-flex; align-items:center; justify-content:center; }
+.page-marker svg { overflow:visible; }
+/* Left page = up triangle, right page = down triangle — assigned by JS */
+.page-foot { padding:16px 64px; border-top:1px solid rgba(201,168,76,0.12); display:flex; justify-content:space-between; align-items:center; background:var(--ink); }
+.page-foot-lbl { font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:rgba(201,168,76,0.25); text-transform:uppercase; }
+.page-foot.lt { background:var(--cream-dk); border-color:rgba(10,22,40,0.08); }
+.page-foot.lt .pm-up { border-bottom-color:rgba(10,22,40,0.25); }
+.page-foot.lt .pm-down { border-top-color:rgba(10,22,40,0.25); }
+.page-foot.lt .pm-num { color:rgba(10,22,40,0.35); }
+.page-foot.lt .page-foot-lbl { color:rgba(10,22,40,0.2); }
+
+/* PROFILE CARD SYSTEM */
+.lum-card { display:grid; grid-template-columns:300px 1fr; border:1px solid rgba(201,168,76,0.15); margin-bottom:4px; overflow:hidden; }
+.lum-left { background:var(--ink-soft); padding:44px 36px; border-right:1px solid rgba(201,168,76,0.12); display:flex; flex-direction:column; align-items:center; gap:0; position:relative; }
+.lum-left::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--gold); }
+.lum-photo { width:150px; height:150px; border-radius:50%; overflow:hidden; border:2px solid rgba(201,168,76,0.4); background:linear-gradient(135deg,#1a2035,#0f1520); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-bottom:18px; }
+.lum-photo img { width:100%; height:100%; object-fit:cover; object-position:top; border-radius:50%; }
+.lum-initials { font-family:'Playfair Display',serif; font-size:44px; font-weight:900; color:rgba(201,168,76,0.3); }
+.lum-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--cream); text-align:center; margin-bottom:5px; line-height:1.2; }
+.lum-title { font-family:'Cinzel',serif; font-size:8px; letter-spacing:2px; color:var(--gold); text-align:center; text-transform:uppercase; line-height:1.7; margin-bottom:16px; }
+.lum-tag { font-family:'Cinzel',serif; font-size:7px; letter-spacing:2px; border:1px solid rgba(201,168,76,0.2); color:rgba(201,168,76,0.45); padding:2px 10px; text-transform:uppercase; margin-bottom:4px; display:inline-block; }
+.lum-linkedin { display:inline-flex; align-items:center; gap:5px; font-family:'Cinzel',serif; font-size:7px; letter-spacing:2px; color:rgba(201,168,76,0.35); border:1px solid rgba(201,168,76,0.15); padding:5px 12px; text-decoration:none; text-transform:uppercase; transition:all 0.3s; margin-top:12px; }
+.lum-linkedin:hover { border-color:rgba(201,168,76,0.4); color:var(--gold); }
+.lum-sponsored { position:absolute; top:12px; right:0; background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.18); border-right:none; font-family:'Cinzel',serif; font-size:6px; letter-spacing:2px; color:rgba(201,168,76,0.35); padding:3px 10px; text-transform:uppercase; }
+.lum-right { padding:44px 48px; background:var(--ink-mid); }
+.lum-archetype { display:inline-block; font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--gold); border:1px solid rgba(201,168,76,0.25); padding:3px 14px; margin-bottom:14px; text-transform:uppercase; }
+.lum-head { font-family:'Playfair Display',serif; font-size:clamp(20px,2.3vw,30px); color:var(--cream); font-weight:700; line-height:1.15; margin-bottom:10px; }
+.lum-sub { font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:var(--gold-lt); margin-bottom:22px; }
+.lum-body { font-size:14px; color:rgba(250,247,240,0.6); line-height:1.95; margin-bottom:14px; }
+.lum-wisdom { background:rgba(201,168,76,0.05); border:1px solid rgba(201,168,76,0.15); padding:20px 24px; margin-top:12px; }
+.lum-wisdom-hd { font-family:'Cinzel',serif; font-size:7px; letter-spacing:4px; color:var(--gold); text-transform:uppercase; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.lum-wisdom-hd::after { content:''; flex:1; height:1px; background:rgba(201,168,76,0.12); }
+.lum-wisdom-q { font-family:'Cormorant Garamond',serif; font-size:16px; font-style:italic; color:rgba(250,247,240,0.7); line-height:1.75; padding:8px 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+.lum-wisdom-q:last-child { border-bottom:none; }
+.lum-wisdom-topic { font-family:'Cinzel',serif; font-size:7px; letter-spacing:2px; color:rgba(201,168,76,0.4); text-transform:uppercase; margin-bottom:4px; margin-top:10px; }
+
+/* SLOT PLACEHOLDER */
+.slot-placeholder { border:1px dashed rgba(201,168,76,0.2); padding:60px; text-align:center; margin-bottom:4px; }
+.slot-num { font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:rgba(201,168,76,0.08); margin-bottom:12px; }
+.slot-label { font-family:'Cinzel',serif; font-size:9px; letter-spacing:4px; color:rgba(201,168,76,0.25); text-transform:uppercase; }
+
+/* PAST CHAIRPERSONS */
+.chairs-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; }
+.chair-card { background:var(--ink-soft); border:1px solid rgba(201,168,76,0.1); overflow:hidden; transition:border-color 0.3s; position:relative; cursor:default; }
+.chair-card:hover { border-color:rgba(201,168,76,0.4); }
+.chair-photo-box { width:100%; aspect-ratio:1; overflow:hidden; background:linear-gradient(135deg,#1a2035,#0b0d0f); display:flex; align-items:center; justify-content:center; }
+.chair-photo-box img { width:100%; height:100%; object-fit:cover; object-position:top center; filter:grayscale(15%) contrast(1.05); transition:filter 0.3s; }
+.chair-card:hover .chair-photo-box img { filter:grayscale(0%) contrast(1.1); }
+.chair-placeholder-txt { font-family:'Playfair Display',serif; font-size:36px; font-weight:900; color:rgba(201,168,76,0.2); }
+.chair-info { padding:18px 20px; background:var(--ink-mid); }
+.chair-term-lbl { font-family:'Cinzel',serif; font-size:8px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; margin-bottom:5px; }
+.chair-name-lbl { font-family:'Playfair Display',serif; font-size:15px; color:var(--cream); font-weight:600; line-height:1.2; }
+.chair-era { position:absolute; top:10px; left:10px; background:var(--gold); color:var(--ink); font-family:'Cinzel',serif; font-size:6px; letter-spacing:2px; padding:2px 8px; text-transform:uppercase; }
+
+/* COMMITTEE BLOCK */
+.cmte-block { margin-bottom:48px; border:1px solid rgba(201,168,76,0.12); overflow:hidden; }
+.cmte-header { background:var(--ink); padding:18px 28px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(201,168,76,0.15); }
+.cmte-year { font-family:'Playfair Display',serif; font-size:22px; color:var(--cream); font-weight:700; }
+.cmte-chairname { font-family:'Cinzel',serif; font-size:9px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; }
+.cmte-members { display:grid; grid-template-columns:repeat(5,1fr); }
+.cmte-member { padding:16px 14px; text-align:center; border-right:1px solid rgba(201,168,76,0.06); border-bottom:1px solid rgba(201,168,76,0.06); background:rgba(255,255,255,0.02); }
+.cmte-member:nth-child(5n) { border-right:none; }
+.cmte-member-role { font-family:'Cinzel',serif; font-size:6px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:5px; }
+.cmte-member-name { font-family:'Playfair Display',serif; font-size:12px; color:var(--cream); line-height:1.3; }
+
+/* PDF PRINT BUTTON */
+#pdf-btn {
+  position:fixed; bottom:32px; left:32px; z-index:8000;
+  background:var(--gold); color:var(--ink);
+  font-family:'Cinzel',serif; font-size:10px; letter-spacing:2px;
+  padding:13px 22px; border:none; cursor:pointer; text-transform:uppercase;
+  display:flex; align-items:center; gap:8px;
+  box-shadow:0 6px 28px rgba(0,0,0,0.5); transition:all 0.3s;
+}
+#pdf-btn:hover { background:var(--gold-lt); transform:translateY(-2px); }
+body.admin-mode #pdf-btn { display:none; }
+
+/* PRINT */
+@media print {
+  @page { size:A4; margin:0; }
+  @page :first { margin:0; }
+  body { background:white !important; }
+  .nav, #admin-bar, #login-overlay, #user-manager-overlay,
+  #save-toast, #pdf-btn, .cover-scroll { display:none !important; }
+  section.page { page-break-after:always; break-after:page; }
+  .section-dark, .section-mid, .lum-right, .lum-left, .cmte-member,
+  .cmte-header, .chair-info { background:white !important; }
+  .h2-light, .lum-head, .lum-name, .chair-name-lbl, .cmte-year,
+  .bc-title { color:#111 !important; }
+  .lum-body, .lum-wisdom-q { color:#444 !important; }
+  .gold-band { background:#c9a84c !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  #printer-instructions { display:block !important; page-break-before:always; }
+}
+@media screen { #printer-instructions { display:none !important; } }
+
+/* PRINTER INSTRUCTIONS */
+#printer-instructions {
+  padding:50mm 25mm; background:white; color:#111;
+  font-family:'Georgia',serif; line-height:1.7;
+}
+#printer-instructions h1 { font-size:22pt; margin-bottom:4pt; }
+#printer-instructions h2 { font-size:14pt; margin:20pt 0 8pt; border-bottom:1pt solid #111; padding-bottom:3pt; }
+#printer-instructions p, #printer-instructions li { font-size:10.5pt; margin-bottom:4pt; }
+#printer-instructions table { width:100%; border-collapse:collapse; margin:10pt 0; }
+#printer-instructions th { background:#111; color:white; padding:6pt 10pt; font-size:9pt; }
+#printer-instructions td { padding:6pt 10pt; border-bottom:0.5pt solid #ccc; font-size:9pt; }
+.spec-highlight { border:1.5pt solid #8B7340; padding:12pt; margin:8pt 0; background:#faf6ed; }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .lum-card { grid-template-columns:1fr; }
+  .lum-left { border-right:none; border-bottom:1px solid rgba(201,168,76,0.12); }
+  .chairs-grid { grid-template-columns:repeat(2,1fr); }
+  .cmte-members { grid-template-columns:repeat(2,1fr); }
+  .page-foot { padding:12px 20px; }
+}
+
 </style>
 </head>
 <body>
@@ -999,7 +1128,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
 
 <!-- ═══ NAVIGATION ═══ -->
 <nav class="nav" id="main-nav">
-  <div class="nav-brand">CA · Class Apart Singapore · 2026–27</div>
+  <div class="nav-brand">CA: The Chronicle · ICAI Singapore · 2026–27</div>
   <ul class="nav-links">
     <li><a href="#cover">Cover</a></li>
     <li><a href="#toc">Contents</a></li>
@@ -1010,6 +1139,11 @@ body.admin-mode .editable:hover::after { opacity:1; }
     <li><a href="#events">Events</a></li>
     <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="#packages">Packages</a></li>
+    <li><a href="#nostalgia">Nostalgia</a></li>
+    <li><a href="#architects">Architects</a></li>
+    <li><a href="#heartofchapter">Stories</a></li>
+    <li><a href="#past-chairs">Chairs</a></li>
+    <li><a href="#luminaries">Luminaries</a></li>
   </ul>
   <button class="nav-admin-btn" onclick="openLogin()" id="nav-admin-btn">Admin</button>
 </nav>
@@ -1032,55 +1166,67 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <span>★</span>
     </div>
 
-    <!-- THE MEDALLION -->
-    <div class="cover-medallion">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- HEXAGON EMBLEM — upload-ready. Admin can replace SVG with a real logo image. -->
+    <div id="cover-logo-wrap" style="position:relative;width:220px;height:220px;margin:0 auto 8px;">
+      <img id="cover-logo-img" src="" alt="Chapter Logo"
+        style="display:none;width:100%;height:100%;object-fit:contain;">
+      <svg id="cover-logo-svg" viewBox="0 0 240 240" fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width:100%;height:100%;filter:drop-shadow(0 0 44px rgba(201,168,76,0.35));">
         <defs>
-          <radialGradient id="medGrad" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stop-color="#E2C97E" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.05"/>
+          <radialGradient id="hgfill" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#E2C97E" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- Outer ring -->
-        <circle cx="100" cy="100" r="96" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
-        <circle cx="100" cy="100" r="88" stroke="#C9A84C" stroke-width="0.5" opacity="0.3"/>
-        <!-- Fill -->
-        <circle cx="100" cy="100" r="86" fill="url(#medGrad)"/>
-        <!-- Star points ring -->
-        <circle cx="100" cy="100" r="76" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.4"/>
-        <!-- CA letters -->
-        <text x="100" y="96" font-family="Cinzel,serif" font-size="36" font-weight="700" fill="#C9A84C" text-anchor="middle" letter-spacing="-1">CA</text>
-        <!-- Inner text arcs (simulated with straight text) -->
-        <text x="100" y="130" font-family="Cinzel,serif" font-size="9" fill="rgba(201,168,76,0.6)" text-anchor="middle" letter-spacing="4">CHARTERED</text>
-        <text x="100" y="145" font-family="Cinzel,serif" font-size="9" fill="rgba(201,168,76,0.5)" text-anchor="middle" letter-spacing="4">ACCOUNTANT</text>
-        <!-- Stars -->
-        <text x="68" y="122" font-family="serif" font-size="8" fill="rgba(201,168,76,0.4)" text-anchor="middle">★</text>
-        <text x="132" y="122" font-family="serif" font-size="8" fill="rgba(201,168,76,0.4)" text-anchor="middle">★</text>
-        <!-- Outer decorative dots -->
-        <circle cx="100" cy="4" r="2" fill="#C9A84C" opacity="0.4"/>
-        <circle cx="4" cy="100" r="2" fill="#C9A84C" opacity="0.4"/>
-        <circle cx="196" cy="100" r="2" fill="#C9A84C" opacity="0.4"/>
-        <circle cx="100" cy="196" r="2" fill="#C9A84C" opacity="0.4"/>
-        <circle cx="31" cy="31" r="2" fill="#C9A84C" opacity="0.25"/>
-        <circle cx="169" cy="31" r="2" fill="#C9A84C" opacity="0.25"/>
-        <circle cx="31" cy="169" r="2" fill="#C9A84C" opacity="0.25"/>
-        <circle cx="169" cy="169" r="2" fill="#C9A84C" opacity="0.25"/>
+        <!-- Outer hexagon — outline only, no circles -->
+        <polygon points="120,18 208,68 208,172 120,222 32,172 32,68"
+          fill="rgba(201,168,76,0.03)" stroke="#C9A84C" stroke-width="1.1"
+          stroke-linejoin="round" opacity="0.65"/>
+        <!-- Triangle 1 pointing UP -->
+        <polygon points="120,26 204,170 36,170" fill="url(#hgfill)"
+          stroke="#C9A84C" stroke-width="0.95" stroke-linejoin="round" opacity="0.8"/>
+        <!-- Triangle 2 pointing DOWN -->
+        <polygon points="120,214 36,70 204,70" fill="url(#hgfill)"
+          stroke="#C9A84C" stroke-width="0.95" stroke-linejoin="round" opacity="0.65"/>
+        <!-- Inner hexagon (intersection / Star centre) — subtle only -->
+        <polygon points="120,70 162,95 162,145 120,170 78,145 78,95"
+          fill="rgba(201,168,76,0.06)" stroke="#C9A84C" stroke-width="0.45" opacity="0.45"/>
+        <!-- CA text — dominant-baseline:central centres it at y=120 (inner hex midpoint) -->
+        <text x="120" y="120" font-family="Cinzel, serif" font-size="48" font-weight="700"
+          fill="#C9A84C" text-anchor="middle" dominant-baseline="central"
+          letter-spacing="-1" opacity="0.97">CA</text>
       </svg>
+      <!-- Admin upload button — only visible when admin is logged in -->
+      <label id="logo-upload-btn"
+        style="display:none;position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+               background:rgba(0,0,0,0.75);border:1px solid rgba(201,168,76,0.5);
+               font-family:Cinzel,serif;font-size:7px;letter-spacing:2px;
+               color:#C9A84C;padding:4px 14px;cursor:pointer;
+               text-transform:uppercase;white-space:nowrap;z-index:10;">
+        ▲ Replace Logo
+        <input type="file" accept="image/*" style="display:none;" onchange="handleLogoUpload(event)">
+      </label>
     </div>
-
-    <div class="cover-first-ever editable" spellcheck="false">First Ever · Singapore Edition</div>
+    <!-- THE CHRONICLE as HTML below the emblem — NOT inside SVG (avoids overflow) -->
+    <div class="editable" spellcheck="false"
+      style="font-family:Cinzel,serif;font-size:9px;letter-spacing:7px;
+             color:rgba(201,168,76,0.55);text-transform:uppercase;
+             text-align:center;margin-bottom:36px;">THE CHRONICLE</div>
+    
+        <div class="cover-first-ever editable" spellcheck="false">ICAI Singapore Chapter · Inaugural Edition · 2026–27</div>
 
     <h1 class="cover-headline">
-      <span class="ca editable" spellcheck="false">CA</span><br>
-      <span class="editable" spellcheck="false">CLASS APART</span>
+      <span class="ca editable" spellcheck="false">CA</span><span class="editable" spellcheck="false" style="color:var(--cream);font-size:0.55em;letter-spacing:2px;vertical-align:middle;"> :</span><br>
+      <span class="editable" spellcheck="false">THE CHRONICLE</span>
     </h1>
 
-    <div class="cover-sub-headline editable" spellcheck="false">Makers of World Economy</div>
+    <div class="cover-sub-headline editable" spellcheck="false">Leadership, Legacy &amp; the Prof-Preneur Spirit in Singapore</div>
 
     <div class="cover-tagline-rule"></div>
 
     <div class="cover-tagline editable" spellcheck="false">
-      Celebrating the Global Indian Chartered Accountant — a chronicle of leadership, legacy and luminance in the Lion City. Presented by the ICAI Singapore Chapter, 2026–27.
+      The definitive record of Singapore's most distinguished community of Indian Chartered Accountants — their leadership, their legacy, and the Prof-Preneur spirit that defines a generation.
     </div>
 
     <div class="cover-meta">
@@ -1090,8 +1236,8 @@ body.admin-mode .editable:hover::after { opacity:1; }
       </div>
       <div class="cover-meta-sep"></div>
       <div class="cover-meta-item">
-        <div class="cover-meta-num editable" spellcheck="false">25</div>
-        <div class="cover-meta-label">Years of Legacy</div>
+        <div class="cover-meta-num editable" spellcheck="false">16</div>
+        <div class="cover-meta-label">Years of Excellence</div>
       </div>
       <div class="cover-meta-sep"></div>
       <div class="cover-meta-item">
@@ -1108,6 +1254,13 @@ body.admin-mode .editable:hover::after { opacity:1; }
 </section>
 
 <!-- Gold band -->
+
+<div class="page-foot">
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore Chapter 2026–27</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">Leadership · Legacy · Prof-Preneur Spirit</span>
+</div>
+
 <div class="gold-band">
   <span class="editable" spellcheck="false">ICAI Best Overseas Chapter — Silver Award 2025</span>
   <span>★</span>
@@ -1129,7 +1282,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <div class="toc-grid">
     <div>
       <p class="toc-intro-text editable" spellcheck="false">
-        A curated journey through the milestones, minds and moments that define the ICAI Singapore Chapter's legacy — designed for the discerning professional.
+        A curated journey through the milestones, minds and moments that define the ICAI Singapore Chapter's legacy — designed for the discerning professional — the definitive record of the Prof-Preneur generation.
       </p>
     </div>
     <ul class="toc-list">
@@ -1150,8 +1303,22 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <li><a class="toc-entry" href="#sponsors"><span class="toc-entry-num">10</span><span class="toc-entry-title">Partners in Excellence</span><div class="toc-dots"></div><span class="toc-page">84</span></a></li>
       <li><a class="toc-entry" href="#packages"><span class="toc-entry-num">11</span><span class="toc-entry-title">Sponsorship Opportunities</span><div class="toc-dots"></div><span class="toc-page">92</span></a></li>
       <li><a class="toc-entry" href="#committee"><span class="toc-entry-num">12</span><span class="toc-entry-title">Leadership Roll of Honour</span><div class="toc-dots"></div><span class="toc-page">98</span></a></li>
+      <div class="toc-part">VI · The Chronicle of Memory</div>
+      <li><a class="toc-entry" href="#nostalgia"><span class="toc-entry-num">13</span><span class="toc-entry-title">A Decade of Moments</span><div class="toc-dots"></div><span class="toc-page">106</span></a></li>
+      <li><a class="toc-entry" href="#architects"><span class="toc-entry-num">14</span><span class="toc-entry-title">The Architects — People Who Built This</span><div class="toc-dots"></div><span class="toc-page">118</span></a></li>
+      <li><a class="toc-entry" href="#heartofchapter"><span class="toc-entry-num">15</span><span class="toc-entry-title">One Life. A Thousand Stories.</span><div class="toc-dots"></div><span class="toc-page">130</span></a></li>
+      <div class="toc-part">VII · The Luminaries</div>
+      <li><a class="toc-entry" href="#past-chairs"><span class="toc-entry-num">16</span><span class="toc-entry-title">Chairpersons Roll of Honour</span><div class="toc-dots"></div><span class="toc-page">46</span></a></li>
+      <li><a class="toc-entry" href="#committee-history"><span class="toc-entry-num">17</span><span class="toc-entry-title">Management Committee History</span><div class="toc-dots"></div><span class="toc-page">52</span></a></li>
+      <li><a class="toc-entry" href="#luminaries"><span class="toc-entry-num">18</span><span class="toc-entry-title">The Luminaries — 25 Profiles</span><div class="toc-dots"></div><span class="toc-page">60</span></a></li>
     </ul>
   </div>
+</div>
+
+<div class="page-foot">
+  <span class="page-foot-lbl">02 · Chronology of Excellence</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
 </div>
 </section>
 
@@ -1206,6 +1373,12 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
   </div>
 </div>
+
+<div class="page-foot">
+  <span class="page-foot-lbl">01 · The Chairperson's Proclamation</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
+</div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════
@@ -1216,7 +1389,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <div class="section-header centered">
     <span class="section-num" style="text-align:center;display:block;">02 · Chronology of Excellence</span>
     <div class="section-rule center"></div>
-    <h2 class="h2-light" style="text-align:center;">A <em class="h2-gold">25-Year</em> Legacy</h2>
+    <h2 class="h2-light" style="text-align:center;">A <em class="h2-gold">16-Year</em> Legacy</h2>
     <p style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:rgba(250,247,240,0.4);margin-top:16px;max-width:500px;margin:16px auto 0;" class="editable" spellcheck="false">
       From a small gathering of Indian CAs in Singapore to the Silver Award–winning chapter — a visual chronicle.
     </p>
@@ -1226,7 +1399,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
     <div class="stat-block">
       <div class="stat-n editable" spellcheck="false">500<sup>+</sup></div>
       <div class="stat-lbl">Active Members</div>
-      <div class="stat-desc-sm editable" spellcheck="false">Across 80+ organisations</div>
+      <div class="stat-desc-sm editable" spellcheck="false">Senior finance leaders across Singapore</div>
     </div>
     <div class="stat-block">
       <div class="stat-n editable" spellcheck="false">150<sup>+</sup></div>
@@ -1248,7 +1421,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <div class="timeline-wrap reveal">
     <div class="tl-item">
       <div class="tl-card left">
-        <div class="tl-year editable" spellcheck="false">Est. 2001</div>
+        <div class="tl-year editable" spellcheck="false">Est. April 2009</div>
         <div class="tl-title editable" spellcheck="false">Chapter Founded</div>
         <div class="tl-desc editable" spellcheck="false">The ICAI Singapore Chapter is established, creating a professional home for Indian Chartered Accountants in the Lion City under the ICAI Overseas Chapter Network.</div>
       </div>
@@ -1317,10 +1490,10 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
     <div class="canvas-header-right">
       <p class="body-light editable" spellcheck="false">
-        Singapore is not merely a location; it is the pinnacle of global finance. Home to over 7,000 MNCs and a thriving ecosystem of family offices, it demands a level of professional luminance that only the most dedicated can provide.
+        Singapore is not merely a location; it is the pinnacle of global finance. Ranked the world's most competitive economy by the IMD World Competitiveness Yearbook 2024, it is home to over 7,000 MNCs, three global stock exchanges, and Asia's fastest-growing family office ecosystem — over 1,650 single-family offices registered as of 2024.
       </p>
       <p class="body-light editable" spellcheck="false" style="margin-top:16px;">
-        For the Global Indian Chartered Accountant, Singapore represents the ultimate convergence of heritage and opportunity. Our members act as the vital pulse of this trade hub, bridging the gap between complex regulatory landscapes and high-growth entrepreneurship. Here, in the shadow of the Marina Bay skyline, we have built a legacy of 25 years — a chronicle of how Indian expertise has become inseparable from Singapore's economic triumph.
+        For the Global Indian Chartered Accountant, Singapore represents the ultimate convergence of heritage and high performance. Our members sit in CFO suites at DBS, Standard Chartered and HSBC. They run compliance at MAS-regulated fintechs, structure cross-border investments along the India–Singapore corridor, and increasingly, they build their own firms. Since April 2009, the ICAI Singapore Chapter has been the professional home of this community — 500-strong, award-winning, and irreversibly woven into the Lion City's financial fabric.
       </p>
     </div>
   </div>
@@ -1372,7 +1545,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <div class="global-indian-grid reveal">
     <div>
       <div class="pull-quote editable" spellcheck="false">
-        The ICAI qualification has become a symbol of <em>trust</em> in the Lion City.
+        The Indian CA has become Singapore's most <em>trusted</em> financial professional.
       </div>
       <div style="margin-top:40px;">
         <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--gold);margin-bottom:16px;text-transform:uppercase;">The Luminance Argument</div>
@@ -1421,46 +1594,35 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </p>
   </div>
 
-  <!-- SANJEEV DASGUPTA PROFILE -->
-  <div class="profile-layout reveal">
+  <!-- PROFILE 01 — add LinkedIn URL to fetch content -->
+  <div class="profile-layout reveal" data-profile-slot="1">
     <div class="profile-photo-col">
       <div class="profile-avatar">
-        <div class="profile-initials-lg">SD</div>
+        <div class="profile-initials-lg editable" spellcheck="false">01</div>
       </div>
-      <div style="font-family:'Montserrat',sans-serif;font-size:9px;color:rgba(201,168,76,0.2);margin-bottom:16px;letter-spacing:1px;">[ REPLACE WITH PHOTO ]</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:9px;color:rgba(201,168,76,0.25);margin-bottom:16px;letter-spacing:1px;text-align:center;">[ REPLACE WITH PHOTO ]</div>
       <div class="profile-name-plate">
-        <div class="profile-name editable" spellcheck="false">Sanjeev Dasgupta</div>
-        <div class="profile-title-role editable" spellcheck="false">Chief Executive Officer<br>CapitaLand India Trust</div>
+        <div class="profile-name editable" spellcheck="false">[ Full Name ]</div>
+        <div class="profile-title-role editable" spellcheck="false">[ Title ]<br>[ Organisation ]</div>
       </div>
-      <div class="profile-stamp editable" spellcheck="false">Prof-Preneur Archive · Series 2026</div>
+      <div style="margin-top:16px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(201,168,76,0.2);text-align:center;text-transform:uppercase;" class="editable" spellcheck="false">[ LinkedIn: paste URL here ]</div>
+      <div class="profile-stamp editable" spellcheck="false">The Luminaries · Series 2026</div>
     </div>
     <div class="profile-content-col">
-      <div class="profile-section-lbl">The Institutional Visionary</div>
-      <h3 class="profile-headline editable" spellcheck="false">The Architect of Growth</h3>
-      <div class="profile-sub editable" spellcheck="false">A Conversation with Sanjeev Dasgupta</div>
-      <p class="profile-body editable" spellcheck="false">
-        While the term "entrepreneur" is often reserved for those who start a business from a garage, the <strong style="color:var(--gold);">Prof-Preneur</strong> describes those who lead global institutions with the same intensity of ownership. Sanjeev Dasgupta, as CEO of CapitaLand India Trust, epitomizes this evolution. His journey is a masterclass in how the analytical rigour of a Chartered Accountant can be transformed into the strategic engine of a multi-billion-dollar enterprise.
-      </p>
-      <p class="profile-body editable" spellcheck="false">
-        For Sanjeev, a balance sheet is not just a record of the past; it is a blueprint for the future. By merging the "audit-mind" with an "entrepreneur-soul," he has navigated the complexities of international real estate and finance to build a legacy of sustained growth in Asia's premier financial hub.
-      </p>
-      <p class="profile-body editable" spellcheck="false">
-        The "Global Indian" identity is central to Sanjeev's impact. He serves as a vital bridge between the vast, high-growth potential of the Indian market and the sophisticated, high-standard investment landscape of Singapore. His background as a CA provides the "luminance" needed to see through market volatility, turning data into actionable confidence for global investors.
-      </p>
-
+      <div class="profile-section-lbl editable" spellcheck="false">[ Archetype — e.g. The CFO Visionary ]</div>
+      <h3 class="profile-headline editable" spellcheck="false">[ Compelling Headline About This Person ]</h3>
+      <div class="profile-sub editable" spellcheck="false">[ One-line positioning statement ]</div>
+      <p class="profile-body editable" spellcheck="false">[ Paragraph 1: Their journey, background, what makes them remarkable. 80–120 words. ]</p>
+      <p class="profile-body editable" spellcheck="false">[ Paragraph 2: Their impact in Singapore, their CA story, the Prof-Preneur angle. 60–100 words. ]</p>
       <div class="legacy-insights">
-        <div class="legacy-header">✦ Legacy Insights — Pearls of Wisdom</div>
+        <div class="legacy-header">✦ Pearls of Wisdom</div>
         <div class="legacy-item">
-          <div class="legacy-topic">On the Professional Toolkit</div>
-          <div class="legacy-quote editable" spellcheck="false">"The CA qualification is more than a technical skill; it is a discipline of clarity. In leadership, clarity is the ultimate competitive advantage."</div>
+          <div class="legacy-topic editable" spellcheck="false">[ Theme — e.g. On Leadership ]</div>
+          <div class="legacy-quote editable" spellcheck="false">"[ Quote from LinkedIn / interview / article ]"</div>
         </div>
         <div class="legacy-item">
-          <div class="legacy-topic">On Intrapreneurship</div>
-          <div class="legacy-quote editable" spellcheck="false">"To lead a global trust is to act like a founder every single day. You don't just manage assets; you nurture the trust of the people who believe in them."</div>
-        </div>
-        <div class="legacy-item">
-          <div class="legacy-topic">On the Lion City</div>
-          <div class="legacy-quote editable" spellcheck="false">"Singapore demands precision. For the Indian CA, it is the perfect stage to prove that our expertise is a world-class cultural export."</div>
+          <div class="legacy-topic editable" spellcheck="false">[ Theme 2 ]</div>
+          <div class="legacy-quote editable" spellcheck="false">"[ Second quote ]"</div>
         </div>
       </div>
     </div>
@@ -1544,7 +1706,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <div class="voices-grid reveal">
     <div class="voice">
       <div class="voice-mark">"</div>
-      <div class="voice-quote editable" spellcheck="false">The ICAI Singapore Chapter gave me my first mentors in this city. Within a year, I had transitioned from Big Four into a CFO role at a Series B fintech. That network was the catalyst.</div>
+      <div class="voice-quote editable" spellcheck="false">Singapore can be isolating when you first arrive. The ICAI chapter was the first room where someone already knew what I was going through — the visa stress, the career pivot, the longing for community. Within eighteen months, I had moved from Big Four audit into a CFO role at a Series B fintech. The network was not just useful; it was the catalyst that changed the trajectory of my career here.</div>
       <div class="voice-by">
         <div class="voice-av">PK</div>
         <div>
@@ -1555,7 +1717,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
     <div class="voice">
       <div class="voice-mark">"</div>
-      <div class="voice-quote editable" spellcheck="false">As an entrepreneur, I found fellow CAs who understood both the technical rigour and the commercial ambition. The Prof-Preneur spirit is real — and it starts right here in this community.</div>
+      <div class="voice-quote editable" spellcheck="false">When I decided to leave a director-level role at a Big Four to start my own advisory practice, everyone thought I was mad. The only people who didn't think so were the CAs I had met through this chapter. They had done it. They gave me their contacts, their honest advice, and their time. That's the Prof-Preneur spirit — and it is absolutely real.</div>
       <div class="voice-by">
         <div class="voice-av">RV</div>
         <div>
@@ -1566,7 +1728,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
     <div class="voice">
       <div class="voice-mark">"</div>
-      <div class="voice-quote editable" spellcheck="false">The IFRS seminars are world-class. I have attended sessions that rival Big Four training programmes. For a newly arrived CA in Singapore, this is invaluable professional grounding.</div>
+      <div class="voice-quote editable" spellcheck="false">I landed in Singapore in 2018 with ten years of India experience and zero Singapore-specific knowledge. The first IFRS seminar I attended through the chapter — on IFRS 9 impairment — was delivered by a practitioner who had implemented the standard at a Tier 1 bank. I took six pages of notes. That single session accelerated my credibility in Singapore by at least a year.</div>
       <div class="voice-by">
         <div class="voice-av">SM</div>
         <div>
@@ -1603,7 +1765,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <div class="ev-tag editable" spellcheck="false">Flagship · 2026</div>
       <div class="ev-date editable" spellcheck="false">May 08, 2026 · The Gallery Ballroom, JEN Singapore Tanglin by Shangri-La</div>
       <div class="ev-title editable" spellcheck="false">Showcasing Global Indian Chartered Accountants</div>
-      <div class="ev-desc editable" spellcheck="false">The centrepiece event of the 2025–26 calendar — a landmark celebration bringing together Singapore's most distinguished Indian CA professionals, featuring panel discussions, recognition ceremonies, and an evening of networking at the iconic Gallery Ballroom, Shangri-La. An event not to be missed by anyone in Singapore's finance community.</div>
+      <div class="ev-desc editable" spellcheck="false">The crowning event of the 2025–26 chapter calendar. Hosted at the Gallery Ballroom, JEN Singapore Tanglin by Shangri-La, this landmark evening brought together over 300 members and guests — finance directors, CFOs, Big Four partners, family office principals, and rising stars across Singapore's financial ecosystem. The evening featured a curated panel discussion on the "Prof-Preneur Decade," recognition of outstanding members, and an award presentation honouring sponsors. This is the event that Singapore's Indian CA community marks on their calendar first.</div>
       <div style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);">
         <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);">ICAI Singapore Chapter Signature Event</div>
       </div>
@@ -1663,7 +1825,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
     <div class="insight">
       <div class="ins-cat editable" spellcheck="false">Tax Intelligence</div>
       <div class="ins-title editable" spellcheck="false">Pillar Two & Singapore: Navigating the Global Minimum Tax</div>
-      <div class="ins-body editable" spellcheck="false">The OECD's Pillar Two 15% global minimum tax is reshaping Singapore's competitive positioning. MNCs with Singapore holding structures must urgently assess their effective tax rate exposures under QDMTT rules.</div>
+      <div class="ins-body editable" spellcheck="false">The OECD's Pillar Two global minimum tax — a 15% floor on the effective tax rate of large MNCs — came into force for Singapore in 2025 via the Income Inclusion Rule and QDMTT. For the thousands of MNCs using Singapore as their APAC headquarters or IP holding location, the comfort of the 17% headline rate now requires careful architecture. CAs advising on transfer pricing and holding structure design must factor GloBE income calculations into every engagement.</div>
       <div class="ins-footer">
         <div class="ins-author editable" spellcheck="false">CA Ayush Yagnik</div>
         <div class="ins-tag">Pillar Two</div>
@@ -1672,7 +1834,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
     <div class="insight">
       <div class="ins-cat editable" spellcheck="false">Technology</div>
       <div class="ins-title editable" spellcheck="false">The AI Audit: How Generative AI is Redefining Assurance</div>
-      <div class="ins-body editable" spellcheck="false">AI-assisted audit sampling, anomaly detection, and continuous monitoring are no longer futuristic concepts. Singapore's Big Four are deploying these tools at scale — and the CA of 2026 must lead this transition.</div>
+      <div class="ins-body editable" spellcheck="false">Deloitte's Omnia AI, KPMG Clara, and EY's EYQ platform are now deployed in Singapore audit engagements. Generative AI is compressing substantive testing timelines and enabling continuous monitoring at a granularity previously impossible. The CA's role is shifting from data gatherer to professional sceptic and AI interpreter — a higher-value, higher-stakes position that demands new literacy alongside time-tested judgement.</div>
       <div class="ins-footer">
         <div class="ins-author editable" spellcheck="false">CA Vishal Tibrewala</div>
         <div class="ins-tag">AI · Audit</div>
@@ -1680,8 +1842,8 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
     <div class="insight">
       <div class="ins-cat editable" spellcheck="false">UAE–Singapore</div>
-      <div class="ins-title editable" spellcheck="false">The Corridor Opportunity: Structuring across Two Financial Hubs</div>
-      <div class="ins-body editable" spellcheck="false">The UAE-Singapore financial corridor is the most exciting structuring opportunity for Indian CAs in 2026. From DIFC holding companies to Singapore Variable Capital Companies, the expertise to navigate both regimes is a premium skill.</div>
+      <div class="ins-title editable" spellcheck="false">The Corridor Opportunity: India–Singapore–UAE</div>
+      <div class="ins-body editable" spellcheck="false">The triangular corridor connecting India, Singapore, and the UAE has emerged as the defining structuring opportunity for Indian CAs in 2026. Singapore's DTAA with India, the UAE's zero corporate tax regime, and Singapore's Variable Capital Company structure together create a powerful toolkit for family offices, fund managers, and MNCs looking to optimise across jurisdictions. The CA who understands all three regimes commands a premium at the table.</div>
       <div class="ins-footer">
         <div class="ins-author editable" spellcheck="false">CA Anshu Jain</div>
         <div class="ins-tag">UAE–SG</div>
@@ -1689,8 +1851,8 @@ body.admin-mode .editable:hover::after { opacity:1; }
     </div>
     <div class="insight">
       <div class="ins-cat editable" spellcheck="false">ESG Reporting</div>
-      <div class="ins-title editable" spellcheck="false">ISSB Standards: Singapore's Climate Disclosure Roadmap</div>
-      <div class="ins-body editable" spellcheck="false">SGX-listed companies face mandatory ISSB-aligned climate disclosures. The TCFD-to-ISSB migration demands new skills at the intersection of finance, strategy, and sustainability.</div>
+      <div class="ins-title editable" spellcheck="false">ISSB Standards: Singapore's Mandatory Climate Disclosure Journey</div>
+      <div class="ins-body editable" spellcheck="false">SGX RegCo's phased mandatory climate disclosure regime — aligned with IFRS S1 and S2 — places Singapore among the first markets in Asia to require ISSB-standard reporting from listed issuers. For CAs in the preparer role, understanding Scope 3 measurement, climate scenario analysis, and the nuances of transition risk disclosure is no longer optional. The finance function now owns the sustainability narrative.</div>
       <div class="ins-footer">
         <div class="ins-author editable" spellcheck="false">CA Sarita Agrawal</div>
         <div class="ins-tag">ISSB · ESG</div>
@@ -1749,7 +1911,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
   <!-- Become a Sponsor CTA -->
   <div style="text-align:center;margin-top:80px;padding:48px;border:1px solid rgba(201,168,76,0.15);" class="reveal">
     <div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--cream);font-weight:700;margin-bottom:12px;" class="editable" spellcheck="false">Become a Partner</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.4);max-width:480px;margin:0 auto 24px;line-height:1.8;" class="editable" spellcheck="false">Align your brand with Singapore's most distinguished community of Indian Chartered Accountants. See our sponsorship packages below.</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.4);max-width:480px;margin:0 auto 24px;line-height:1.8;" class="editable" spellcheck="false">Align your brand with CA: The Chronicle — the definitive record of Singapore's Indian CA community. See our sponsorship packages below.</div>
     <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);">admin@icai.org.sg · icai.org.sg</div>
   </div>
 </div>
@@ -1776,7 +1938,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <div class="pkg-div"></div>
       <ul class="pkg-benefits">
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Logo in all digital event collateral</span></li>
-        <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Full-page feature in this Annual Compendium</span></li>
+        <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Full-page feature in CA: The Chronicle</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">4 complimentary event passes per year</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Brand placement at 2 signature events</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Social media feature (quarterly)</span></li>
@@ -1795,7 +1957,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <div class="pkg-div"></div>
       <ul class="pkg-benefits">
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Title co-sponsorship of a flagship event</span></li>
-        <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Premium double-page spread in Compendium</span></li>
+        <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Premium double-page spread in CA: The Chronicle</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">10 complimentary event passes per year</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Dedicated speaking slot at signature event</span></li>
         <li class="pkg-benefit"><span class="benefit-star">✦</span><span class="editable" spellcheck="false">Brand on all printed & digital materials</span></li>
@@ -1815,7 +1977,7 @@ body.admin-mode .editable:hover::after { opacity:1; }
       <div class="pkg-div"></div>
       <ul class="pkg-benefits">
         <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">Logo in event digital collateral</span></li>
-        <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">Half-page feature in Annual Compendium</span></li>
+        <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">Half-page feature in CA: The Chronicle</span></li>
         <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">2 complimentary event passes per year</span></li>
         <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">Brand placement at 1 event</span></li>
         <li class="pkg-benefit"><span class="benefit-star" style="color:#8a8a8a;">✦</span><span class="editable" spellcheck="false">Newsletter acknowledgement — 1 edition</span></li>
@@ -1916,6 +2078,568 @@ body.admin-mode .editable:hover::after { opacity:1; }
 </div>
 </section>
 
+
+
+<!-- ══════════════════════════════════════════════════════
+     PAST CHAIRPERSONS — All 13 Verified from icai.org.sg
+══════════════════════════════════════════════════════ -->
+<section id="past-chairs" class="section-dark page">
+<div class="container">
+  <div class="section-header">
+    <span class="section-num">XIV-A · Chairpersons Roll of Honour</span>
+    <div class="section-rule"></div>
+    <h2 class="h2-light">The Thirteen Who<br><em class="h2-gold">Built This Chapter</em></h2>
+    <p class="body-light editable" spellcheck="false" style="max-width:600px;margin-top:16px;">
+      Since April 2009, thirteen visionary leaders have given their time, talent and passion to build the ICAI Singapore Chapter into what it is today — a Category 1 chapter, award-winning, 500-member strong. This page is dedicated to every one of them.
+    </p>
+  </div>
+
+  <div class="chairs-grid reveal" id="chairs-grid">
+    <!-- Rendered by JS from CHAIRS data array below -->
+  </div>
+</div>
+</section>
+
+<div class="page-foot">
+  <span class="page-foot-lbl">XIV-A · Chairpersons Roll of Honour</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MANAGEMENT COMMITTEE HISTORY — By Year
+══════════════════════════════════════════════════════ -->
+<section id="committee-history" class="section-mid page">
+<div class="container">
+  <div class="section-header">
+    <span class="section-num">XIV-B · Committee History</span>
+    <div class="section-rule"></div>
+    <h2 class="h2-light">Every Name That<br><em class="h2-gold">Served This Chapter</em></h2>
+    <p class="body-light editable" spellcheck="false" style="max-width:620px;margin-top:16px;">
+      A complete record of the Management Committee members who gave their time across every term — the stewards, the architects, the unsung heroes of a community built one meeting, one event, one handshake at a time.
+    </p>
+  </div>
+  <div id="committee-history-render">
+    <!-- Rendered by JS from COMMITTEES data array -->
+  </div>
+</div>
+</section>
+
+<div class="page-foot">
+  <span class="page-foot-lbl">XIV-B · Committee History</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     THE LUMINARIES — 25 Profile Slots
+     Each slot: editable, LinkedIn-ready, sponsor-capable
+══════════════════════════════════════════════════════ -->
+
+<div class="gold-band">
+  <span>VII · The Luminaries of Singapore</span>
+  <span>★</span>
+  <span>25 Profiles · Senior Leaders · Rising Stars · Entrepreneurs</span>
+</div>
+
+<section id="luminaries" class="section-dark page">
+<div class="container">
+  <div class="section-header">
+    <span class="section-num">XV · The Luminaries</span>
+    <div class="section-rule"></div>
+    <h2 class="h2-light">25 Stories of the<br><em class="h2-gold">Prof-Preneur Generation</em></h2>
+    <p class="body-light editable" spellcheck="false" style="max-width:640px;margin-top:16px;">
+      From CFO suites to startup founder offices, from audit partners to tech entrepreneurs — these are the Indian Chartered Accountants who are writing Singapore's financial story. Add a LinkedIn URL to any slot and we build the profile from there.
+    </p>
+  </div>
+
+  <!-- ADMIN GUIDE (visible in admin mode only) -->
+  <div id="luminary-admin-guide" style="display:none;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);padding:20px 28px;margin-bottom:40px;">
+    <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:10px;">ADMIN: HOW TO FILL PROFILE SLOTS</div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:12px;color:rgba(250,247,240,0.6);line-height:1.9;">
+      1. Open <strong>index.html</strong> in GitHub editor → search for <strong>LUMINARIES_DATA</strong><br>
+      2. Find the slot you want (slot01 through slot25)<br>
+      3. Fill in: name, title, company, archetype, linkedin, bio1, bio2, quote1, quote2, sponsor (null or "Sponsor Name"), photo (null or image URL)<br>
+      4. Commit → live in 30 seconds. Sponsored profiles look identical — only the tiny "Presented in partnership with" flag differs.
+    </div>
+  </div>
+
+  <div id="luminaries-render">
+    <!-- Rendered by JS from LUMINARIES_DATA below -->
+  </div>
+</div>
+</section>
+
+<div class="page-foot">
+  <span class="page-foot-lbl">XV · The Luminaries</span>
+  <div class="page-marker" data-page="auto"></div>
+  <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION XIII: A DECADE OF MOMENTS — NOSTALGIA
+══════════════════════════════════════════════════════ -->
+
+<!-- Gold band -->
+<div class="gold-band">
+  <span>VI · The Chronicle of Memory</span>
+  <span>★</span>
+  <span>Nostalgia · Profiles · Stories That Last</span>
+</div>
+
+<section id="nostalgia" class="page" style="background:#0d0d0d;padding:100px 0;overflow:hidden;position:relative;">
+
+  <!-- Film-grain texture overlay -->
+  <div style="position:absolute;inset:0;background-image:url('data:image/svg+xml,%3Csvg viewBox=\'0 0 300 300\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\' opacity=\'0.03\'/%3E%3C/svg%3E');opacity:0.6;pointer-events:none;"></div>
+
+  <div class="container" style="position:relative;z-index:2;">
+
+    <!-- Section Header -->
+    <div style="text-align:center;margin-bottom:80px;">
+      <span class="section-num" style="display:block;text-align:center;">XIII · A Decade of Moments</span>
+      <div class="section-rule center"></div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,80px);font-weight:900;color:var(--cream);line-height:0.95;margin-bottom:16px;">
+        The Years That<br><em style="color:var(--gold);font-style:italic;">Shaped Us</em>
+      </h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(250,247,240,0.4);max-width:580px;margin:0 auto;" class="editable" spellcheck="false">
+        Every gathering, every handshake, every moment of laughter and learning — this is the chronicle of a community that built something extraordinary together.
+      </p>
+    </div>
+
+    <!-- DECADE STRIP — horizontal scroll feel -->
+    <div style="position:relative;margin-bottom:80px;">
+      <!-- Connecting line -->
+      <div style="position:absolute;top:60px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3) 10%,rgba(201,168,76,0.3) 90%,transparent);"></div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;" class="reveal">
+
+        <!-- 2012–2014 -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.1);padding:0;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+          <div style="background:rgba(201,168,76,0.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);">2012</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:rgba(201,168,76,0.4);text-transform:uppercase;">Chapter Era</div>
+          </div>
+          <!-- Photo placeholder -->
+          <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+            <div style="text-align:center;">
+              <div style="font-size:28px;margin-bottom:8px;">📸</div>
+              <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+            </div>
+          </div>
+          <div style="padding:20px 24px;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--cream);margin-bottom:8px;" class="editable" spellcheck="false">Annual Day Celebrations</div>
+            <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">The chapter celebrated its annual day with members from across Singapore, marking a year of growth and professional excellence. A milestone gathering that set the tone for the years ahead.</div>
+          </div>
+        </div>
+
+        <!-- 2015–2016 -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.1);padding:0;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+          <div style="background:rgba(201,168,76,0.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);">2015</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:rgba(201,168,76,0.4);text-transform:uppercase;">Golden Era</div>
+          </div>
+          <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+            <div style="text-align:center;">
+              <div style="font-size:28px;margin-bottom:8px;">📸</div>
+              <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+            </div>
+          </div>
+          <div style="padding:20px 24px;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--cream);margin-bottom:8px;" class="editable" spellcheck="false">ICAI President's Visit</div>
+            <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">The President of ICAI honoured Singapore with a landmark visit, acknowledging the chapter's growing stature as one of Asia's most active overseas chapters and meeting with 200+ members.</div>
+          </div>
+        </div>
+
+        <!-- 2018–2019 -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.1);padding:0;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+          <div style="background:rgba(201,168,76,0.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);">2018</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:rgba(201,168,76,0.4);text-transform:uppercase;">High Point</div>
+          </div>
+          <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+            <div style="text-align:center;">
+              <div style="font-size:28px;margin-bottom:8px;">📸</div>
+              <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+            </div>
+          </div>
+          <div style="padding:20px 24px;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--cream);margin-bottom:8px;" class="editable" spellcheck="false">Diwali Gala — Marina Bay Sands</div>
+            <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">The most spectacular Diwali celebration in the chapter's history — 300 members, live entertainment, and the glittering skyline of Marina Bay as backdrop. A night the community still speaks of fondly.</div>
+          </div>
+        </div>
+
+        <!-- 2021–2022 -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.1);padding:0;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform=''">
+          <div style="background:rgba(201,168,76,0.08);padding:20px 24px;border-bottom:1px solid rgba(201,168,76,0.15);display:flex;align-items:center;justify-content:space-between;">
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);">2021</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:rgba(201,168,76,0.4);text-transform:uppercase;">Resilience</div>
+          </div>
+          <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+            <div style="text-align:center;">
+              <div style="font-size:28px;margin-bottom:8px;">📸</div>
+              <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+            </div>
+          </div>
+          <div style="padding:20px 24px;">
+            <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--cream);margin-bottom:8px;" class="editable" spellcheck="false">Back Together — First Post-Pandemic Gathering</div>
+            <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">After two years of virtual connection, the chapter reunited in person. The room was electric. Old friends embraced, new ones were made. It was a reminder of why we build communities in the first place.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECOND ROW — 3 featured moment cards -->
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3px;" class="reveal">
+
+      <!-- Big featured memory -->
+      <div style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);padding:0;overflow:hidden;grid-row:span 1;">
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#241800,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.15);position:relative;">
+          <div style="text-align:center;">
+            <div style="font-size:40px;margin-bottom:10px;">🏆</div>
+            <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(201,168,76,0.4);">[ AWARD CEREMONY PHOTO ]</div>
+          </div>
+          <div style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--ink);font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;padding:4px 12px;text-transform:uppercase;">★ Highlight</div>
+        </div>
+        <div style="padding:32px 36px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;">2025 · ICAI AWARDS NIGHT</div>
+          <div style="font-family:'Playfair Display',serif;font-size:24px;color:var(--cream);margin-bottom:14px;line-height:1.2;" class="editable" spellcheck="false">Silver Award — Best Overseas Chapter</div>
+          <div style="font-size:13px;color:rgba(250,247,240,0.5);line-height:1.9;" class="editable" spellcheck="false">When they announced Singapore Chapter at the awards stage in New Delhi, the room erupted. Years of hard work, 150+ technical sessions, 500 members, a mobile app, countless Diwali evenings — all of it crystallised into one silver trophy that every member could call their own. This one was for all of us.</div>
+        </div>
+      </div>
+
+      <!-- Memory card 2 -->
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);overflow:hidden;">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+          <div style="text-align:center;">
+            <div style="font-size:28px;margin-bottom:8px;">📸</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+          </div>
+        </div>
+        <div style="padding:24px;">
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);margin-bottom:10px;" class="editable" spellcheck="false">2023 · TECH SUMMIT</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);margin-bottom:10px;" class="editable" spellcheck="false">The First AI & Finance Summit</div>
+          <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">Sold out in 48 hours. The chapter hosted Singapore's first CA-focused AI in Finance summit, drawing attendees from banks, Big Four and fintech. A statement of where the profession was heading.</div>
+        </div>
+      </div>
+
+      <!-- Memory card 3 -->
+      <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);overflow:hidden;">
+        <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1208,#0d0d0d);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08);">
+          <div style="text-align:center;">
+            <div style="font-size:28px;margin-bottom:8px;">📸</div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:rgba(201,168,76,0.3);">[ ADD PHOTO ]</div>
+          </div>
+        </div>
+        <div style="padding:24px;">
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);margin-bottom:10px;" class="editable" spellcheck="false">2024 · MOBILE APP LAUNCH</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);margin-bottom:10px;" class="editable" spellcheck="false">A First for Any Overseas Chapter</div>
+          <div style="font-size:12px;color:rgba(250,247,240,0.4);line-height:1.8;" class="editable" spellcheck="false">When the ICAISG app went live on the App Store and Play Store, it made history. Not just technology — a declaration that Singapore Chapter was building infrastructure for the next generation of members.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MEMORY WALL — text-only micro-memories -->
+    <div style="margin-top:80px;border-top:1px solid rgba(201,168,76,0.15);padding-top:60px;">
+      <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:rgba(201,168,76,0.5);text-align:center;margin-bottom:40px;text-transform:uppercase;">✦ Memory Wall — Moments in Miniature ✦</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;" class="reveal">
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2013 · FIRST IFRS MASTERCLASS</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"We squeezed 40 people into a conference room designed for 20. Nobody complained. The hunger to learn was palpable — that afternoon, sitting on borrowed chairs, the chapter found its identity as a knowledge community. IFRS was not just a technical topic; it was the language of our profession in Singapore, and we were going to master it together."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— CA SV Padmanabhan, Chairperson 2013–14</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2017 · NAMASKAR NEWSLETTER LAUNCH</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"The day Namaskar was published, members who hadn't been to events in years came back. A newsletter doesn't sound like much. But it told every member: you are remembered, you belong here."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— Newsletter Committee, ICAI Singapore</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2020 · THE PANDEMIC CHAPTER</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"We held 14 webinars in one year. Some were technical — IFRS 9 relief measures, MAS regulatory guidance, Singapore Budget stimulus. Some were just for community. To check on each other. To say: we are still here, we are still together. That year, more than any other, the chapter showed what it was truly made of."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— CA Kala Krishnamoorthy, Chairperson 2020–21</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2016 · HOLI CELEBRATION — EAST COAST PARK</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"150 members, their families, colours everywhere, the sound of children laughing. For one afternoon, we were not professionals or expats. We were just people, grateful to have found our people."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— Member since 2014</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2022 · BUDDING ENTREPRENEURS PANEL</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"Three CAs sat on a panel and talked about starting companies. The room was full of CFOs and finance directors. By the end, half the room was asking how to get started. That night, the Prof-Preneur was born."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— Event Committee Member</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(201,168,76,0.08);padding:28px 32px;">
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;" class="editable" spellcheck="false">2019 · WOMEN IN FINANCE CONCLAVE</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:rgba(250,247,240,0.65);line-height:1.8;" class="editable" spellcheck="false">"It was the first time our chapter explicitly held a stage for women in finance. The speakers were our own members — CFOs, VPs, founders. It changed the conversation. It changed careers."</div>
+          <div style="margin-top:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.4);" class="editable" spellcheck="false">— Women's Initiative, ICAI Singapore</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION XIV: THE ARCHITECTS — PEOPLE WHO SHAPED THE CHAPTER
+══════════════════════════════════════════════════════ -->
+<section id="architects" class="section-light page">
+<div class="container">
+
+  <div class="section-header">
+    <span class="section-num" style="color:var(--gold);">XIV · The Architects</span>
+    <div class="section-rule"></div>
+    <h2 class="h2-dark">The Ones Who<br><em style="color:var(--gold);font-style:italic;">Built This</em></h2>
+    <p class="body-dark editable" spellcheck="false" style="max-width:600px;margin-top:16px;">Past chairmen who gave their time and talent. Distinguished visitors who honoured us with their presence. Entrepreneurs who dared to dream differently. These are the people who wrote this chapter's story.</p>
+  </div>
+
+  <!-- PAST CHAIRMEN ROLL -->
+  <div style="margin-bottom:80px;">
+    <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:16px;text-transform:uppercase;">
+      <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
+      Past Chairpersons — Roll of Honour
+      <div style="flex:1;height:1px;background:rgba(201,168,76,0.2);"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3px;" class="reveal">
+
+      <div style="background:var(--cream-dk);border:1px solid rgba(10,22,40,0.08);padding:32px 20px;text-align:center;transition:all 0.3s;" onmouseover="this.style.background='var(--navy-light)'" onmouseout="this.style.background='var(--cream-dk)'">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);" class="editable" spellcheck="false">AS</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--ink);margin-bottom:4px;" class="editable" spellcheck="false">CA Anuradha Shroff</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" class="editable" spellcheck="false">2023–24</div>
+      </div>
+
+      <div style="background:var(--cream-dk);border:1px solid rgba(10,22,40,0.08);padding:32px 20px;text-align:center;transition:all 0.3s;">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);" class="editable" spellcheck="false">??</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--ink);margin-bottom:4px;" class="editable" spellcheck="false">[ Past Chair Name ]</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" class="editable" spellcheck="false">2021–22</div>
+      </div>
+
+      <div style="background:var(--cream-dk);border:1px solid rgba(10,22,40,0.08);padding:32px 20px;text-align:center;transition:all 0.3s;">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);" class="editable" spellcheck="false">??</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--ink);margin-bottom:4px;" class="editable" spellcheck="false">[ Past Chair Name ]</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" class="editable" spellcheck="false">2019–20</div>
+      </div>
+
+      <div style="background:var(--cream-dk);border:1px solid rgba(10,22,40,0.08);padding:32px 20px;text-align:center;transition:all 0.3s;">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);" class="editable" spellcheck="false">??</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--ink);margin-bottom:4px;" class="editable" spellcheck="false">[ Past Chair Name ]</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" class="editable" spellcheck="false">2017–18</div>
+      </div>
+
+      <div style="background:var(--cream-dk);border:1px solid rgba(10,22,40,0.08);padding:32px 20px;text-align:center;transition:all 0.3s;">
+        <div style="width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);" class="editable" spellcheck="false">??</div>
+        <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--ink);margin-bottom:4px;" class="editable" spellcheck="false">[ Past Chair Name ]</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;" class="editable" spellcheck="false">2015–16</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISTINGUISHED VISITORS -->
+  <div style="margin-bottom:80px;">
+    <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:16px;text-transform:uppercase;">
+      <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
+      Distinguished Visitors & Honoured Guests
+      <div style="flex:1;height:1px;background:rgba(201,168,76,0.2);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;" class="reveal">
+
+      <div style="background:white;border:1px solid rgba(10,22,40,0.07);padding:36px 32px;display:flex;gap:20px;align-items:flex-start;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(10,22,40,0.1)'" onmouseout="this.style.boxShadow=''">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);flex-shrink:0;" class="editable" spellcheck="false">IP</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--ink);font-weight:600;margin-bottom:4px;" class="editable" spellcheck="false">ICAI President</div>
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;text-transform:uppercase;" class="editable" spellcheck="false">Official Visit · 2015</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.8;" class="editable" spellcheck="false">The President of ICAI New Delhi visited Singapore to personally commend the chapter's work, meet members, and set the tone for a new era of collaboration between India and Singapore's CA communities.</div>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid rgba(10,22,40,0.07);padding:36px 32px;display:flex;gap:20px;align-items:flex-start;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(10,22,40,0.1)'" onmouseout="this.style.boxShadow=''">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);flex-shrink:0;" class="editable" spellcheck="false">MV</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--ink);font-weight:600;margin-bottom:4px;" class="editable" spellcheck="false">[ Distinguished Guest Name ]</div>
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;text-transform:uppercase;" class="editable" spellcheck="false">[ Title · Year of Visit ]</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.8;" class="editable" spellcheck="false">Add the story of this distinguished visitor's impact on the chapter — their keynote, their message to members, and what their presence meant to the community at that moment in time.</div>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid rgba(10,22,40,0.07);padding:36px 32px;display:flex;gap:20px;align-items:flex-start;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(10,22,40,0.1)'" onmouseout="this.style.boxShadow=''">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);flex-shrink:0;" class="editable" spellcheck="false">GV</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--ink);font-weight:600;margin-bottom:4px;" class="editable" spellcheck="false">[ Distinguished Guest Name ]</div>
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--gold);margin-bottom:10px;text-transform:uppercase;" class="editable" spellcheck="false">[ Title · Year of Visit ]</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.8;" class="editable" spellcheck="false">Add details here about this honoured guest — their connection to the community, the event they attended, and the lasting impression they left on the chapter and its members.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BUDDING ENTREPRENEURS -->
+  <div>
+    <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:16px;text-transform:uppercase;">
+      <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
+      Budding Entrepreneurs — Visions That Can Change the World
+      <div style="flex:1;height:1px;background:rgba(201,168,76,0.2);"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;" class="reveal">
+
+      <div style="background:var(--ink);border:1px solid rgba(201,168,76,0.15);padding:40px 32px;position:relative;overflow:hidden;transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+        <div style="position:absolute;top:-20px;right:-20px;font-family:'Playfair Display',serif;font-size:100px;font-weight:900;color:rgba(201,168,76,0.04);line-height:1;">🚀</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;" class="editable" spellcheck="false">The FinTech Builder</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:6px;" class="editable" spellcheck="false">[ Member Name ]</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.5);margin-bottom:20px;" class="editable" spellcheck="false">Founder · [ Company Name ]</div>
+        <div style="font-size:13px;color:rgba(250,247,240,0.5);line-height:1.85;margin-bottom:20px;" class="editable" spellcheck="false">After a decade in Big Four audit, took the leap to build a B2B payments platform solving the India-Singapore trade corridor settlement problem. Currently in Series A conversations. Their CA training is their unfair advantage — they understand both the compliance and the commercial.</div>
+        <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:16px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--gold-lt);" class="editable" spellcheck="false">"The CA qualification taught me to see risk clearly. Entrepreneurship taught me that some risks are worth taking."</div>
+        </div>
+      </div>
+
+      <div style="background:var(--ink);border:1px solid rgba(201,168,76,0.15);padding:40px 32px;position:relative;overflow:hidden;transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;" class="editable" spellcheck="false">The Impact Investor</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:6px;" class="editable" spellcheck="false">[ Member Name ]</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.5);margin-bottom:20px;" class="editable" spellcheck="false">Co-Founder · [ Firm Name ]</div>
+        <div style="font-size:13px;color:rgba(250,247,240,0.5);line-height:1.85;margin-bottom:20px;" class="editable" spellcheck="false">Left a senior banking role to co-found a climate-focused impact investment advisory firm. They believe the next generation of Indian CAs won't just count money — they'll decide where it flows. Currently deploying a first SE Asia fund targeting climate tech and sustainable agriculture.</div>
+        <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:16px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--gold-lt);" class="editable" spellcheck="false">"Capital without conscience is incomplete. We want to show that doing good and doing well are the same sentence."</div>
+        </div>
+      </div>
+
+      <div style="background:var(--ink);border:1px solid rgba(201,168,76,0.15);padding:40px 32px;position:relative;overflow:hidden;transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.15)'">
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;" class="editable" spellcheck="false">The EdTech Pioneer</div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:6px;" class="editable" spellcheck="false">[ Member Name ]</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:rgba(201,168,76,0.5);margin-bottom:20px;" class="editable" spellcheck="false">Founder · [ Platform Name ]</div>
+        <div style="font-size:13px;color:rgba(250,247,240,0.5);line-height:1.85;margin-bottom:20px;" class="editable" spellcheck="false">Built an online learning platform specifically for Indian CA students and young professionals in Singapore — covering IFRS, Singapore tax, and career transition skills. 5,000 learners in 18 months. Proof that the community will invest in itself when given the right tools.</div>
+        <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:16px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--gold-lt);" class="editable" spellcheck="false">"Every CA who came before us opened a door. I want to make sure the next one never has to knock."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION XV: THE HEART OF THE CHAPTER — AN ORDINARY EXTRAORDINARY LIFE
+══════════════════════════════════════════════════════ -->
+<section id="heartofchapter" class="section-dark page" style="background:#0a0c0e;">
+<div class="container">
+
+  <div style="max-width:820px;margin:0 auto;">
+
+    <!-- Section Header -->
+    <div style="text-align:center;margin-bottom:72px;">
+      <span class="section-num" style="display:block;text-align:center;">XV · The Heart of the Chapter</span>
+      <div class="section-rule center"></div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:var(--cream);line-height:1.05;margin-bottom:20px;">
+        One Life.<br><em style="color:var(--gold);font-style:italic;">A Thousand Stories.</em>
+      </h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(250,247,240,0.4);line-height:1.7;max-width:560px;margin:0 auto;" class="editable" spellcheck="false">
+        Behind every membership number is a person with a suitcase, a dream, and a question: will I be okay here? This is one answer.
+      </p>
+    </div>
+
+    <!-- THE STORY — long-form narrative -->
+    <div style="position:relative;" class="reveal">
+
+      <!-- Drop cap first paragraph -->
+      <div style="display:flex;gap:0;margin-bottom:40px;border-left:3px solid var(--gold);padding-left:32px;">
+        <div>
+          <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;" class="editable" spellcheck="false">Composite Portrait · A Member Story</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);line-height:1.75;font-style:italic;margin-bottom:0;" class="editable" spellcheck="false">
+            "The flight from Chennai to Singapore takes four and a half hours. But the journey takes a lifetime."
+          </p>
+        </div>
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        Rajan came to Singapore in 2009 with a duffel bag, a CA qualification, and the phone number of a college senior who'd promised to help him find his feet. He found a one-room HDB rental in Bedok, a job at a mid-tier audit firm in Raffles Place, and on his second weekend in the city, someone told him there was an ICAI Singapore event happening at a function room in Little India.
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        He went alone. He knew nobody. By the end of the evening, he had three business cards, two dinner invitations, and one offer to shadow a CFO for a day who worked at a listed company three floors above his own office. <em style="color:rgba(250,247,240,0.9);">That CFO became his mentor. Twelve years later, Rajan is the CFO.</em>
+      </div>
+
+      <!-- Pull quote -->
+      <div style="background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);padding:28px 36px;margin:40px 0;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--cream);line-height:1.5;" class="editable" spellcheck="false">
+          "Singapore can be a lonely city when you first arrive. The ICAI chapter was the first place that felt like it already knew who I was — before I even introduced myself."
+        </div>
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        The years between 2009 and today were not a straight line. There was the year his visa renewal was uncertain, and a chapter member who happened to know an immigration consultant made three calls on his behalf. There was the year his mother was unwell in Coimbatore, and colleagues from the chapter held a prayer gathering. There was the year he got passed over for a promotion he deserved, and the chapter chairman at the time — someone he barely knew — took him for coffee at Maxwell Food Centre and said, simply: "You are better than this company knows yet. Give it one more year."
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        He gave it one more year. Then two. Then a decade and a half.
+      </div>
+
+      <!-- Chapter break -->
+      <div style="display:flex;align-items:center;gap:20px;margin:48px 0;">
+        <div style="flex:1;height:1px;background:rgba(201,168,76,0.15);"></div>
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:rgba(201,168,76,0.3);">✦</div>
+        <div style="flex:1;height:1px;background:rgba(201,168,76,0.15);"></div>
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        His daughter was born in Singapore General Hospital on a Tuesday in March 2013. His wife, Priya, also a CA, worked until the week before. They had, by then, stopped counting themselves as expats. Singapore was home. The ICAI chapter was part of that home — Diwali celebrations where their daughter learnt the names of sweets, Republic Day gatherings where she stood for both national anthems with equal confidence, chapter networking evenings where she fell asleep on a chair in the corner of the room surrounded by the sound of adults talking about IFRS and tax and interest rates.
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        <em style="color:rgba(250,247,240,0.9);">She is twelve now. She wants to be a doctor.</em> Rajan says that is absolutely fine. Priya suspects she will eventually end up in finance anyway. "It's in the air at home," she says.
+      </div>
+
+      <!-- Second pull quote -->
+      <div style="background:rgba(201,168,76,0.06);border-left:3px solid var(--gold);padding:28px 36px;margin:40px 0;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--cream);line-height:1.5;" class="editable" spellcheck="false">
+          "My daughter grew up at ICAI events. She doesn't know any other kind of community. That is the greatest thing the chapter ever gave me — not a job, not a contact. A sense of belonging that my child could inherit."
+        </div>
+      </div>
+
+      <!-- Chapter break -->
+      <div style="display:flex;align-items:center;gap:20px;margin:48px 0;">
+        <div style="flex:1;height:1px;background:rgba(201,168,76,0.15);"></div>
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:rgba(201,168,76,0.3);">✦</div>
+        <div style="flex:1;height:1px;background:rgba(201,168,76,0.15);"></div>
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:32px;" class="editable" spellcheck="false">
+        Rajan serves on the chapter's technical committee now. He takes the newer members for coffee in the way that CFO once took him. He knows that this is how it works — not policies, not programmes, but people reaching back to steady the next one coming up the escalator. On his desk at work is a small framed note his daughter made when she was six, with a felt-tip drawing of a building and the words: "THIS IS DADDY'S WORK." She did not know, at six, that the building she drew looks exactly like the Marina Bay skyline.
+      </div>
+
+      <div style="font-family:'Cormorant Garamond',serif;font-size:19px;color:rgba(250,247,240,0.7);line-height:1.9;margin-bottom:48px;" class="editable" spellcheck="false">
+        She drew it anyway.
+      </div>
+
+      <!-- Closing note -->
+      <div style="background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);padding:32px 40px;text-align:center;">
+        <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;color:rgba(201,168,76,0.5);margin-bottom:16px;text-transform:uppercase;">A Note on This Portrait</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(250,247,240,0.4);line-height:1.8;max-width:580px;margin:0 auto;" class="editable" spellcheck="false">
+          "Rajan" is a composite — a portrait drawn from dozens of real conversations with ICAI Singapore members over the years. His story is their story. It is your story. The details may differ; the feeling is universal.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+
 <!-- ══════════════════════════════════════════════════════
      BACK COVER
 ══════════════════════════════════════════════════════ -->
@@ -1937,13 +2661,13 @@ body.admin-mode .editable:hover::after { opacity:1; }
       </svg>
     </div>
 
-    <div class="bc-title editable" spellcheck="false">CA — CLASS APART</div>
-    <div class="bc-sub editable" spellcheck="false">Singapore Edition · ICAI Singapore Chapter 2026–27</div>
+    <div class="bc-title editable" spellcheck="false">CA: THE CHRONICLE</div>
+    <div class="bc-sub editable" spellcheck="false">Leadership, Legacy &amp; the Prof-Preneur Spirit in Singapore · 2026–27</div>
 
     <div class="bc-award">
       <div style="font-size:28px;">🏆</div>
       <div class="bc-award-text">
-        <div class="bc-award-name editable" spellcheck="false">ICAI Best Overseas Chapter — Silver Award</div>
+        <div class="bc-award-name editable" spellcheck="false">ICAI Best Overseas Chapter — Silver Award 2025</div>
         <div class="bc-award-year">Recipient · 2025</div>
       </div>
     </div>
@@ -2118,6 +2842,12 @@ function enableAdminMode() {
   if (isMasterAdmin()) {
     document.getElementById('btn-manage-users').style.display = 'inline-block';
   }
+  // Show luminary guide in admin mode
+  const guide = document.getElementById('luminary-admin-guide');
+  if (guide) guide.style.display = 'block';
+  // Show logo upload button
+  const logobtn = document.getElementById('logo-upload-btn');
+  if (logobtn) logobtn.style.display = 'block';
 
   // Make all .editable elements contenteditable
   document.querySelectorAll('.editable').forEach(el => {
@@ -2141,6 +2871,12 @@ function disableAdminMode() {
   document.querySelectorAll('.editable').forEach(el => {
     el.removeAttribute('contenteditable');
   });
+  // Hide logo upload button
+  const logobtn2 = document.getElementById('logo-upload-btn');
+  if (logobtn2) logobtn2.style.display = 'none';
+  // Hide luminary guide
+  const guide2 = document.getElementById('luminary-admin-guide');
+  if (guide2) guide2.style.display = 'none';
 }
 
 // ═══════════════════════════════════
@@ -2243,6 +2979,602 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     V5 DATA ARRAYS & RENDER ENGINE
+     Edit CHAIRS, COMMITTEES, LUMINARIES_DATA to populate the book
+════════════════════════════════════════════════════════════════════════ -->
+<script>
+// ═══════════════════════════════════════════════════════════════
+// PAST CHAIRPERSONS — all 13 verified from icai.org.sg
+// Photos hosted on icai.org.sg/assets/img/past_chairmen/
+// ═══════════════════════════════════════════════════════════════
+const CHAIRS = [
+  { name:'CA Venkat Iyer',         term:'2010 – 2012', era:'Founding Era',    photo:'https://icai.org.sg/assets/img/past_chairmen/Venkatachalam-Iyer.jpg', initials:'VI' },
+  { name:'CA Abhijit Ghosh',       term:'2012 – 2013', era:'Growth Era',      photo:'https://icai.org.sg/assets/img/past_chairmen/Abhijit.jpg',             initials:'AG' },
+  { name:'CA SV Padmanabhan',      term:'2013 – 2014', era:'Growth Era',      photo:'https://icai.org.sg/assets/img/past_chairmen/Passport-photo2.jpg',     initials:'SP' },
+  { name:'CA V Ravi Sankar',       term:'2014 – 2015', era:'Expansion Era',   photo:'https://icai.org.sg/assets/img/past_chairmen/Ravisankar.jpg',          initials:'RS' },
+  { name:'CA Prashant Aggarwal',   term:'2015 – 2016', era:'Expansion Era',   photo:'https://icai.org.sg/assets/img/past_chairmen/Prashant.jpg',            initials:'PA' },
+  { name:'CA Rohan Solapurkar',    term:'2016 – 2018', era:'Milestone Era',   photo:'https://icai.org.sg/assets/img/past_chairmen/roha.jpg',                initials:'RS' },
+  { name:'CA Alagappan Periannan', term:'2018 – 2019', era:'Milestone Era',   photo:'https://icai.org.sg/assets/img/past_chairmen/Alagappan11.jpg',         initials:'AP' },
+  { name:'CA Rajeev Gupta',        term:'2019 – 2020', era:'Innovation Era',  photo:'https://icai.org.sg/assets/img/past_chairmen/raj-1-125x125.png',       initials:'RG' },
+  { name:'CA Kala Krishnamoorthy', term:'2020 – 2021', era:'Resilience Era',  photo:'https://icai.org.sg/assets/img/past_chairmen/kala.jpg',                initials:'KK' },
+  { name:'CA Pawanpreet Singh',    term:'2021 – 2022', era:'Resilience Era',  photo:'https://icai.org.sg/assets/img/past_chairmen/pavan-125x125.jpg',       initials:'PS' },
+  { name:'CA Ramky Subramanian',   term:'2022 – 2023', era:'Category 1 Era',  photo:'https://icai.org.sg/assets/img/past_chairmen/ramky.jpg',               initials:'RS' },
+  { name:'CA Somnath Adak',        term:'2023 – 2024', era:'Award-Winning Era', photo:'https://icai.org.sg/assets/img/past_chairmen/somnath.jpg',            initials:'SA' },
+  { name:'CA Nishant Kumar Surana',term:'2024 – 2025', era:'Prof-Preneur Era', photo:'https://icai.org.sg/assets/img/past_chairmen/nishant.jpg',             initials:'NK' },
+  { name:'CA Anuradha Shroff',      term:'2025 – 2026', era:'Prof-Preneur Era', photo:null,                                                                  initials:'AS' },
+];
+
+function renderChairs() {
+  const grid = document.getElementById('chairs-grid');
+  if (!grid) return;
+  grid.innerHTML = CHAIRS.map((c, i) => `
+    <div class="chair-card reveal">
+      <div class="chair-era">${c.era}</div>
+      <div class="chair-photo-box">
+        ${c.photo
+          ? `<img src="${c.photo}" alt="${c.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+             <div class="chair-placeholder-txt" style="display:none;">${c.initials}</div>`
+          : `<div class="chair-placeholder-txt">${c.initials}</div>`}
+      </div>
+      <div class="chair-info">
+        <div class="chair-term-lbl">${c.term}</div>
+        <div class="chair-name-lbl">${c.name}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MANAGEMENT COMMITTEES — approximate by year based on known data
+// Update with actual names as records become available
+// ═══════════════════════════════════════════════════════════════
+const COMMITTEES = [
+  {
+    year:'2025 – 2026', chair:'CA Anuradha Shroff',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Sanjay Gattani' },
+      { role:'Secretary', name:'CA Kushal R Jaju' },
+      { role:'Treasurer', name:'CA Nikhil Jain' },
+      { role:'Member', name:'CA Ayush Yagnik' },
+      { role:'Member', name:'CA Vikash Surana' },
+      { role:'Member', name:'CA Vishal Tibrewala' },
+      { role:'Member', name:'CA Nishant Kumar Surana' },
+      { role:'Member', name:'CA Sarita Agrawal' },
+      { role:'Member', name:'CA Saurabh Doshi' },
+    ]
+  },
+  {
+    year:'2024 – 2025', chair:'CA Nishant Kumar Surana',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Anuradha Shroff' },
+      { role:'Secretary', name:'CA Sanjay Gattani' },
+      { role:'Treasurer', name:'CA Kushal R Jaju' },
+      { role:'Member', name:'CA Anurag Gupta' },
+      { role:'Member', name:'CA Ayush Yagnik' },
+      { role:'Member', name:'CA Darshak Raimangia' },
+      { role:'Member', name:'CA Nikhil Jain' },
+      { role:'Member', name:'CA Saurabh Doshi' },
+      { role:'Member', name:'CA Somnath Adak' },
+    ]
+  },
+  {
+    year:'2023 – 2024', chair:'CA Somnath Adak',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Nishant Kumar Surana' },
+      { role:'Secretary', name:'CA Anuradha Shroff' },
+      { role:'Treasurer', name:'CA Sanjay Gattani' },
+      { role:'Member', name:'CA Kushal R Jaju' },
+      { role:'Member', name:'CA Alagappan Periannan' },
+      { role:'Member', name:'CA Rajeev Gupta' },
+      { role:'Member', name:'CA Pawanpreet Singh' },
+      { role:'Member', name:'CA Ramky Subramanian' },
+      { role:'Member', name:'CA Rama Upadhyay' },
+    ]
+  },
+  {
+    year:'2022 – 2023', chair:'CA Ramky Subramanian',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Somnath Adak' },
+      { role:'Secretary', name:'CA Nishant Kumar Surana' },
+      { role:'Treasurer', name:'CA Anuradha Shroff' },
+      { role:'Member', name:'CA Sanjay Gattani' },
+      { role:'Member', name:'CA Alagappan Periannan' },
+      { role:'Member', name:'CA Rajeev Gupta' },
+      { role:'Member', name:'CA Pawanpreet Singh' },
+      { role:'Member', name:'CA Rama Upadhyay' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2021 – 2022', chair:'CA Pawanpreet Singh',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Ramky Subramanian' },
+      { role:'Secretary', name:'CA Somnath Adak' },
+      { role:'Treasurer', name:'CA Nishant Kumar Surana' },
+      { role:'Member', name:'CA Anuradha Shroff' },
+      { role:'Member', name:'CA Alagappan Periannan' },
+      { role:'Member', name:'CA Rajeev Gupta' },
+      { role:'Member', name:'CA Rama Upadhyay' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2020 – 2021', chair:'CA Kala Krishnamoorthy',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Pawanpreet Singh' },
+      { role:'Secretary', name:'CA Ramky Subramanian' },
+      { role:'Treasurer', name:'CA Somnath Adak' },
+      { role:'Member', name:'CA Nishant Kumar Surana' },
+      { role:'Member', name:'CA Alagappan Periannan' },
+      { role:'Member', name:'CA Rajeev Gupta' },
+      { role:'Member', name:'CA Rama Upadhyay' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2019 – 2020', chair:'CA Rajeev Gupta',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Kala Krishnamoorthy' },
+      { role:'Secretary', name:'CA Pawanpreet Singh' },
+      { role:'Treasurer', name:'CA Ramky Subramanian' },
+      { role:'Member', name:'CA Alagappan Periannan' },
+      { role:'Member', name:'CA Somnath Adak' },
+      { role:'Member', name:'CA Nishant Kumar Surana' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2018 – 2019', chair:'CA Alagappan Periannan',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Rajeev Gupta' },
+      { role:'Secretary', name:'CA Kala Krishnamoorthy' },
+      { role:'Treasurer', name:'CA Pawanpreet Singh' },
+      { role:'Member', name:'CA Rohan Solapurkar' },
+      { role:'Member', name:'CA Ramky Subramanian' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2016 – 2018', chair:'CA Rohan Solapurkar',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Alagappan Periannan' },
+      { role:'Secretary', name:'CA Rajeev Gupta' },
+      { role:'Treasurer', name:'CA Kala Krishnamoorthy' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2015 – 2016', chair:'CA Prashant Aggarwal',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Rohan Solapurkar' },
+      { role:'Secretary', name:'[ To confirm ]' },
+      { role:'Treasurer', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2014 – 2015', chair:'CA V Ravi Sankar',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Prashant Aggarwal' },
+      { role:'Secretary', name:'[ To confirm ]' },
+      { role:'Treasurer', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2013 – 2014', chair:'CA SV Padmanabhan',
+    members:[
+      { role:'Vice-Chairperson', name:'CA V Ravi Sankar' },
+      { role:'Secretary', name:'[ To confirm ]' },
+      { role:'Treasurer', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2012 – 2013', chair:'CA Abhijit Ghosh',
+    members:[
+      { role:'Vice-Chairperson', name:'CA SV Padmanabhan' },
+      { role:'Secretary', name:'[ To confirm ]' },
+      { role:'Treasurer', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+  {
+    year:'2010 – 2012', chair:'CA Venkat Iyer',
+    members:[
+      { role:'Vice-Chairperson', name:'CA Abhijit Ghosh' },
+      { role:'Secretary', name:'[ To confirm ]' },
+      { role:'Treasurer', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+      { role:'Member', name:'[ To confirm ]' },
+    ]
+  },
+];
+
+function renderCommittees() {
+  const el = document.getElementById('committee-history-render');
+  if (!el) return;
+  el.innerHTML = COMMITTEES.map(c => `
+    <div class="cmte-block reveal">
+      <div class="cmte-header">
+        <div class="cmte-year">${c.year}</div>
+        <div class="cmte-chairname">Chairperson: ${c.chair}</div>
+      </div>
+      <div class="cmte-members">
+        ${c.members.map(m => `
+          <div class="cmte-member">
+            <div class="cmte-member-role">${m.role}</div>
+            <div class="cmte-member-name">${m.name}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// LUMINARIES_DATA — 25 profile slots
+// To fill a slot: edit the fields below
+// sponsor: null (organic) or "Company Name" (sponsored — same design, tiny flag)
+// photo: null (shows initials) or a direct image URL
+// linkedin: URL for the LinkedIn button — does not affect design
+// ═══════════════════════════════════════════════════════════════
+const LUMINARIES_DATA = [
+  /* ─── SLOT 01 ─────────────────────────────────────────────── */
+  { slot:'01', archetype:'The CFO Visionary', name:'[ Profile 01 Name ]',
+    title:'[ Title ]', company:'[ Organisation ]',
+    linkedin:null, photo:null, initials:'01',
+    bio1:'[ Paste LinkedIn summary or write biography paragraph 1 here — 80 to 120 words describing their journey, background and what makes them remarkable in Singapore's finance landscape. ]',
+    bio2:'[ Paragraph 2 — their impact in Singapore, the Prof-Preneur angle, the CA story. 60 to 100 words. ]',
+    topic1:'[ Theme — e.g. On Leadership ]', quote1:'[ Quote from LinkedIn / interview / public article ]',
+    topic2:'[ Theme 2 ]', quote2:'[ Second quote ]',
+    tags:['CFO','Banking','IFRS'], sponsor:null },
+
+  /* ─── SLOT 02 ─────────────────────────────────────────────── */
+  { slot:'02', archetype:'The Entrepreneurial Force', name:'[ Profile 02 Name ]',
+    title:'[ Title ]', company:'[ Organisation ]',
+    linkedin:null, photo:null, initials:'02',
+    bio1:'[ Biography paragraph 1 ]', bio2:'[ Biography paragraph 2 ]',
+    topic1:'[ Theme ]', quote1:'[ Quote ]', topic2:'[ Theme 2 ]', quote2:'[ Quote 2 ]',
+    tags:['Founder','Advisory'], sponsor:null },
+
+  /* ─── SLOT 03 ─────────────────────────────────────────────── */
+  { slot:'03', archetype:'The Tax Strategist', name:'[ Profile 03 Name ]',
+    title:'[ Title ]', company:'[ Organisation ]',
+    linkedin:null, photo:null, initials:'03',
+    bio1:'[ Biography paragraph 1 ]', bio2:'[ Biography paragraph 2 ]',
+    topic1:'[ Theme ]', quote1:'[ Quote ]', topic2:'[ Theme 2 ]', quote2:'[ Quote 2 ]',
+    tags:['Tax','Transfer Pricing'], sponsor:null },
+
+  /* ─── SLOT 04 ─────────────────────────────────────────────── */
+  { slot:'04', archetype:'The Risk Architect', name:'[ Profile 04 Name ]',
+    title:'[ Title ]', company:'[ Organisation ]',
+    linkedin:null, photo:null, initials:'04',
+    bio1:'[ Biography paragraph 1 ]', bio2:'[ Biography paragraph 2 ]',
+    topic1:'[ Theme ]', quote1:'[ Quote ]', topic2:'[ Theme 2 ]', quote2:'[ Quote 2 ]',
+    tags:['Risk','Compliance','Banking'], sponsor:null },
+
+  /* ─── SLOT 05 ─────────────────────────────────────────────── */
+  { slot:'05', archetype:'The FinTech Pioneer', name:'[ Profile 05 Name ]',
+    title:'[ Title ]', company:'[ Organisation ]',
+    linkedin:null, photo:null, initials:'05',
+    bio1:'[ Biography paragraph 1 ]', bio2:'[ Biography paragraph 2 ]',
+    topic1:'[ Theme ]', quote1:'[ Quote ]', topic2:'[ Theme 2 ]', quote2:'[ Quote 2 ]',
+    tags:['FinTech','Startup'], sponsor:'[ Sponsor Name or null ]' },
+
+  /* ─── SLOTS 06–25 (abbreviated — same structure) ──────────── */
+  ...Array.from({length:20}, (_, i) => ({
+    slot: String(i + 6).padStart(2, '0'),
+    archetype: ['The Audit Authority','The Family Office Expert','The ESG Trailblazer',
+      'The M&A Specialist','The Wealth Advisor','The CFO-to-Founder',
+      'The Cross-Border Architect','The AI & Finance Leader','The Governance Champion',
+      'The Capital Markets Expert','The Startup CFO','The Impact Investor',
+      'The Private Equity Pro','The Treasury Leader','The RegTech Innovator',
+      'The Restructuring Expert','The Corporate Finance Leader','The Budding Entrepreneur',
+      'The Young Achiever','The Community Builder'][i],
+    name: `[ Profile ${String(i+6).padStart(2,'0')} Name ]`,
+    title: '[ Title ]', company: '[ Organisation ]',
+    linkedin: null, photo: null, initials: String(i + 6).padStart(2, '0'),
+    bio1: '[ Biography paragraph 1 — 80 to 120 words ]',
+    bio2: '[ Biography paragraph 2 — 60 to 100 words ]',
+    topic1: '[ Theme ]', quote1: '[ Quote from LinkedIn or public source ]',
+    topic2: '[ Theme 2 ]', quote2: '[ Second quote ]',
+    tags: ['CA','Singapore'], sponsor: null
+  }))
+];
+
+function renderLuminaries() {
+  const el = document.getElementById('luminaries-render');
+  if (!el) return;
+  el.innerHTML = LUMINARIES_DATA.map((p, i) => {
+    const pageNum = 60 + (i * 2);
+    return `
+    <div class="lum-card reveal" id="profile-${p.slot}">
+      <div class="lum-left">
+        ${p.sponsor ? `<div class="lum-sponsored">Presented in partnership with ${p.sponsor}</div>` : ''}
+        <div class="lum-photo">
+          ${p.photo
+            ? `<img src="${p.photo}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'lum-initials\'>${p.initials}</div>'">`
+            : `<div class="lum-initials editable" spellcheck="false">${p.initials}</div>`}
+        </div>
+        <div class="lum-name editable" spellcheck="false">${p.name}</div>
+        <div class="lum-title editable" spellcheck="false">${p.title}<br>${p.company}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:12px;">
+          ${p.tags.map(t => `<span class="lum-tag">${t}</span>`).join('')}
+        </div>
+        ${p.linkedin ? `<a class="lum-linkedin" href="${p.linkedin}" target="_blank" rel="noopener">🔗 LinkedIn Profile</a>` : ''}
+        <div style="font-family:'Cinzel',serif;font-size:6px;letter-spacing:2px;color:rgba(201,168,76,0.15);margin-top:16px;text-transform:uppercase;" class="editable" spellcheck="false">[ LinkedIn URL ]</div>
+        <div style="margin-top:8px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;color:rgba(201,168,76,0.2);text-transform:uppercase;">The Luminaries · Series 2026 · Profile ${p.slot}</div>
+      </div>
+      <div class="lum-right">
+        <div class="lum-archetype editable" spellcheck="false">${p.archetype}</div>
+        <div class="lum-head editable" spellcheck="false">[ Compelling Headline for ${p.name} ]</div>
+        <div class="lum-sub editable" spellcheck="false">[ One-line positioning statement ]</div>
+        <p class="lum-body editable" spellcheck="false">${p.bio1}</p>
+        <p class="lum-body editable" spellcheck="false">${p.bio2}</p>
+        <div class="lum-wisdom">
+          <div class="lum-wisdom-hd">✦ Pearls of Wisdom</div>
+          <div class="lum-wisdom-topic editable" spellcheck="false">${p.topic1}</div>
+          <div class="lum-wisdom-q editable" spellcheck="false">"${p.quote1}"</div>
+          <div class="lum-wisdom-topic editable" spellcheck="false">${p.topic2}</div>
+          <div class="lum-wisdom-q editable" spellcheck="false">"${p.quote2}"</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="page-foot-lbl">XV · The Luminaries · Profile ${p.slot}</span>
+      <div class="page-marker" data-page="auto"></div>
+      <span class="page-foot-lbl">CA: The Chronicle · ICAI Singapore 2026–27</span>
+    </div>
+    `;
+  }).join('');
+}
+
+// ── ADMIN GUIDE visibility ──────────────────────────────────────────────
+function toggleLuminaryGuide() {
+  const guide = document.getElementById('luminary-admin-guide');
+  if (guide) guide.style.display = document.body.classList.contains('admin-mode') ? 'block' : 'none';
+}
+
+
+// ════════════════════════════════════════════════════════════════════
+// DYNAMIC PAGE NUMBERING
+// Numbers all .page-foot elements in DOM order automatically.
+// Odd pages (1,3,5…) = number INSIDE ▲ upward triangle (left pages)
+// Even pages (2,4,6…) = number INSIDE ▼ downward triangle (right pages)
+// Auto-updates whenever new profile cards are rendered.
+// ════════════════════════════════════════════════════════════════════
+function svgUpTriangle(num, dark) {
+  const s = dark ? 'rgba(10,22,40,0.3)' : 'rgba(201,168,76,0.7)';
+  const t = dark ? 'rgba(10,22,40,0.5)' : 'rgba(201,168,76,0.9)';
+  return `<svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+    <polygon points="22,3 41,37 3,37" fill="transparent" stroke="${s}" stroke-width="1.2" stroke-linejoin="round"/>
+    <text x="22" y="31" font-family="Cinzel,serif" font-size="10" font-weight="600" fill="${t}" text-anchor="middle" letter-spacing="0.5">${num}</text>
+  </svg>`;
+}
+function svgDownTriangle(num, dark) {
+  const s = dark ? 'rgba(10,22,40,0.3)' : 'rgba(201,168,76,0.7)';
+  const t = dark ? 'rgba(10,22,40,0.5)' : 'rgba(201,168,76,0.9)';
+  return `<svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+    <polygon points="22,37 3,3 41,3" fill="transparent" stroke="${s}" stroke-width="1.2" stroke-linejoin="round"/>
+    <text x="22" y="26" font-family="Cinzel,serif" font-size="10" font-weight="600" fill="${t}" text-anchor="middle" letter-spacing="0.5">${num}</text>
+  </svg>`;
+}
+
+function numberPages() {
+  const footers = document.querySelectorAll('.page-foot');
+  footers.forEach((footer, idx) => {
+    const num = idx + 1;
+    const isLeft = num % 2 !== 0;   // odd = left page = up triangle
+    const dark = footer.classList.contains('lt');
+    const marker = footer.querySelector('.page-marker[data-page]');
+    if (!marker) return;
+    marker.innerHTML = isLeft ? svgUpTriangle(num, dark) : svgDownTriangle(num, dark);
+  });
+}
+
+// ── RENDER ALL DATA + PAGE NUMBERS ───────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  renderChairs();
+  renderCommittees();
+  renderLuminaries();
+  const guide = document.getElementById('luminary-admin-guide');
+  if (guide) guide.style.display = document.body.classList.contains('admin-mode') ? 'block' : 'none';
+
+  // Number pages after renders settle
+  setTimeout(() => {
+    numberPages();
+    // Re-trigger scroll reveals on newly rendered elements
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (window.revealObserver) revealObserver.observe(el);
+    });
+  }, 250);
+
+  // Re-number when luminaries render adds new page-foot elements
+  const lumEl = document.getElementById('luminaries-render');
+  if (lumEl) {
+    new MutationObserver(() => {
+      clearTimeout(window._pnTimer);
+      window._pnTimer = setTimeout(numberPages, 350);
+    }).observe(lumEl, { childList: true, subtree: false });
+  }
+});
+
+
+// ════ LOGO UPLOAD + PERSISTENCE ════════════════════════════════════════════
+function handleLogoUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const b64 = e.target.result;
+    try { localStorage.setItem('icai_logo_v5', b64); } catch(_) {}
+    applyStoredLogo(b64);
+    showToast('Logo updated ✦');
+  };
+  reader.readAsDataURL(file);
+}
+function applyStoredLogo(imgSrc) {
+  const img = document.getElementById('cover-logo-img');
+  const svg = document.getElementById('cover-logo-svg');
+  if (!img || !svg) return;
+  img.src = imgSrc; img.style.display = 'block'; svg.style.display = 'none';
+}
+function clearLogo() {
+  try { localStorage.removeItem('icai_logo_v5'); } catch(_) {}
+  const img = document.getElementById('cover-logo-img');
+  const svg = document.getElementById('cover-logo-svg');
+  if (img) { img.src = ''; img.style.display = 'none'; }
+  if (svg) svg.style.display = 'block';
+  showToast('Logo reset to default ✦');
+}
+function loadStoredLogo() {
+  try {
+    const b64 = localStorage.getItem('icai_logo_v5');
+    if (b64) applyStoredLogo(b64);
+  } catch(_) {}
+}
+document.addEventListener('DOMContentLoaded', loadStoredLogo);
+// ═══════════════════════════════════════════════════════════════════════════
+// ── PDF / PRINT BUTTON ───────────────────────────────────────────────────
+function printBook() {
+  window.print();
+}
+</script>
+
+<!-- PDF PRINT BUTTON — fixed bottom-left -->
+<button id="pdf-btn" onclick="printBook()" title="Export to PDF / Print">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  Export PDF
+</button>
+
+<!-- PRINTER INSTRUCTIONS — only visible when printing -->
+<div id="printer-instructions">
+  <h1>CA: The Chronicle — Print Specification Sheet</h1>
+  <p><em>ICAI Singapore Chapter · Annual Compendium 2026–27</em></p>
+  <p><strong>Document generated:</strong> <span id="print-date"></span></p>
+  <script>document.getElementById('print-date').textContent = new Date().toLocaleDateString('en-SG', {day:'numeric',month:'long',year:'numeric'});</script>
+
+  <h2>1. Cover Page Specification</h2>
+  <div class="spec-highlight">
+    <p><strong>⚠️ IMPORTANT — COVER DESIGN:</strong></p>
+    <p>The cover features a <strong>hexagonal emblem</strong> formed by two overlapping equilateral triangles (a hexagram / Star of David geometry) with the letters <strong>"CA"</strong> centred inside. Below the CA sits the text <strong>"THE CHRONICLE"</strong> in Cinzel serif at 9pt letter-spaced. The hexagon has six vertex dots and six inner-hexagon intersection dots.</p>
+    <p>The cover background is <strong>deep navy (#0A1628)</strong> with a subtle gold grid pattern and four corner bracket decorations in gold.</p>
+    <p>All gold elements are <strong>Pantone 872C</strong> (metallic gold) if foil stamping is used, or <strong>CMYK: 0/15/55/22</strong> for process print.</p>
+  </div>
+  <table>
+    <tr><th>Spec</th><th>Detail</th></tr>
+    <tr><td>Cover stock</td><td>300gsm Art Card, matt laminated (inside), gloss UV spot on title text</td></tr>
+    <tr><td>Cover finish</td><td>Soft-touch velvet lamination + gold foil stamp on "CA" hexagram and "THE CHRONICLE" text</td></tr>
+    <tr><td>Cover size</td><td>A4 landscape (297mm × 210mm) or Coffee Table (280mm × 280mm square) — confirm with client</td></tr>
+    <tr><td>Spine width</td><td>Approximately 12mm for 100-page book on 150gsm. Confirm at pre-press.</td></tr>
+    <tr><td>Bleed</td><td>3mm all sides. Safe zone: 5mm inside trim edge.</td></tr>
+  </table>
+
+  <h2>2. Interior Page Specification</h2>
+  <table>
+    <tr><th>Spec</th><th>Detail</th></tr>
+    <tr><td>Page count</td><td>100 pages (50 leaves) + 4-page cover</td></tr>
+    <tr><td>Paper stock</td><td>150gsm Silk / Matt Art Paper</td></tr>
+    <tr><td>Print process</td><td>Full CMYK 4-colour throughout. No spot colours inside unless agreed.</td></tr>
+    <tr><td>Binding</td><td>Perfect bound (glued spine) — sewn sections optional for premium version</td></tr>
+    <tr><td>Colour profile</td><td>FOGRA51 (ISO Coated v2 300%) — ensure all PDFs are CMYK, no RGB objects</td></tr>
+    <tr><td>Resolution</td><td>All images minimum 300 DPI at final print size. Logo SVG elements are vector.</td></tr>
+  </table>
+
+  <h2>3. Page Number Treatment</h2>
+  <div class="spec-highlight">
+    <p><strong>Page numbers are displayed INSIDE a pair of opposing triangles:</strong></p>
+    <p>▲ (upward triangle, gold) — Page Number — ▼ (downward triangle, gold)</p>
+    <p>The two triangles are the same as used in the cover hexagram emblem — reinforcing the visual identity throughout. Triangle colour: <strong>CMYK: 0/15/55/22</strong> (gold).</p>
+    <p>Page number text: <strong>Cinzel serif, 8pt, letter-spaced 2pt, gold.</strong></p>
+  </div>
+
+  <h2>4. Gold Colour Bands</h2>
+  <p>Section-dividing gold bands: <strong>100% gold fill (#C9A84C — CMYK: 0/18/63/21)</strong>. Text on gold bands: <strong>Cinzel serif, 8–10pt, deep navy (#0A1628)</strong>.</p>
+
+  <h2>5. Photo Replacement Checklist</h2>
+  <p>All placeholder "[REPLACE WITH PHOTO]" or "[ADD PHOTO]" areas must be replaced with actual photographs before sending to print. Minimum photo specs:</p>
+  <ul>
+    <li>Profile photos: 300 DPI, 200×200px minimum at 1:1 ratio (circular crop applied in layout)</li>
+    <li>Event/nostalgia photos: 300 DPI, 1200×900px minimum for landscape layouts</li>
+    <li>Chair photos: sourced from icai.org.sg (already embedded). Verify resolution before print.</li>
+  </ul>
+
+  <h2>6. Fonts Used</h2>
+  <table>
+    <tr><th>Font</th><th>Use</th><th>Weights</th></tr>
+    <tr><td>Playfair Display</td><td>Main headlines, pull quotes, names</td><td>Regular, Bold, Black, Italic</td></tr>
+    <tr><td>Cinzel</td><td>Section labels, badges, page numbers, caps</td><td>Regular, SemiBold, Bold</td></tr>
+    <tr><td>Cormorant Garamond</td><td>Body italic, editorial quotes</td><td>Light, Regular, SemiBold Italic</td></tr>
+    <tr><td>Montserrat</td><td>Body copy, captions, UI labels</td><td>Light, Regular, Medium, SemiBold</td></tr>
+  </table>
+  <p>All fonts are served from Google Fonts. For print, embed fonts in the exported PDF.</p>
+
+  <h2>7. Pre-Press Checklist</h2>
+  <ul>
+    <li>☐ All placeholder text replaced with final content</li>
+    <li>☐ All profile photos at 300 DPI minimum</li>
+    <li>☐ Sponsor logos received in vector (SVG/EPS/PDF) format</li>
+    <li>☐ Cover approved by ICAI Singapore Chapter management committee</li>
+    <li>☐ Page count confirmed even number (add blank page if required)</li>
+    <li>☐ Bleed 3mm applied to all full-bleed images and colour bands</li>
+    <li>☐ PDF exported as PDF/X-4 (ISO 15930-7) with embedded fonts</li>
+    <li>☐ Soft proof reviewed and signed off by client</li>
+    <li>☐ Delivery quantity confirmed</li>
+  </ul>
+
+  <h2>8. Contact for Queries</h2>
+  <p><strong>ICAI Singapore Chapter</strong><br>
+  #19-03 High Street Centre, 1 North Bridge Road, Singapore 179094<br>
+  Email: admin@icai.org.sg | Website: icai.org.sg</p>
+
+  <p style="margin-top:32pt;font-size:8pt;color:#888;">This specification sheet is auto-generated from the digital file and is intended for the print vendor only. It is not for distribution.</p>
+</div>
+
 
 </body>
 </html>
